@@ -1,8 +1,10 @@
 import react from '@vitejs/plugin-react'
 import {defineConfig} from 'vite'
-import {resolve} from 'node:path'
+import {extname, relative, resolve} from 'node:path'
+import {fileURLToPath} from "node:url";
+import {glob} from "glob";
 import dts from 'vite-plugin-dts';
-import tsconfigPaths from 'vite-tsconfig-paths';
+import {libInjectCss} from "vite-plugin-lib-inject-css";
 
 import {peerDependencies} from './package.json';
 
@@ -10,8 +12,8 @@ import {peerDependencies} from './package.json';
 export default defineConfig({
   plugins: [
     react(),
-    tsconfigPaths(),
-    dts(),
+    dts({include: ['lib']}),
+    libInjectCss(),
   ],
   build: {
     target: 'ESNext',
@@ -24,18 +26,31 @@ export default defineConfig({
       name: 'TahoniLib',
       // the proper extensions will be added
       fileName: 'tahoni-lib',
+      formats: ['es'],
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      // Exclude peer dependencies from the bundle to reduce bundle size
-      external: ['react', 'react/jsx-runtime',...Object.keys(peerDependencies)],
+      external: ['react', 'react/jsx-runtime', ...Object.keys(peerDependencies)],
+      input: Object.fromEntries(
+          glob.sync('lib/**/*.{ts,tsx,scss}', {
+            ignore: ["lib/!**/!*.d.ts", "lib/vite-env.d.ts"],
+          }).map(file => [
+            // The name of the entry point
+            // lib/nested/foo.ts becomes nested/foo
+            relative(
+                'lib',
+                file.slice(0, file.length - extname(file).length)
+            ),
+            // The absolute path to the entry file
+            // lib/nested/foo.ts becomes /project/lib/nested/foo.ts
+            fileURLToPath(new URL(file, import.meta.url))
+          ])
+      ),
       output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
-        globals: {
-        },
-      },
+        assetFileNames: '[name][extname]',
+        entryFileNames: '[name].js',
+      }
     },
   },
 })
