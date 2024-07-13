@@ -1,6 +1,7 @@
 import {CSSProperties} from "react";
 import {SyncLoader} from "react-spinners";
 import styles from "./styles.module.scss";
+import "./styles.scss";
 
 export const Loader = (props: LoaderProps) => {
     const loaderOverrides: CSSProperties = {
@@ -11,7 +12,7 @@ export const Loader = (props: LoaderProps) => {
     };
 
     return (
-        <div className={styles.loader}>
+        <div className="loader">
             <SyncLoader cssOverride={loaderOverrides}
                         color={styles.loaderColor}
                         loading={props.isLoading}/>
