@@ -1,11 +1,11 @@
 import {ReactElement} from "react";
-import classes from "./overlay.module.scss";
+import styles from "./styles.module.scss";
 
 export const MaskOverlay = (props: MaskOverlayProps): ReactElement => {
     return (
         <>
             {props.mask ?
-                <div className={classes.maskOverlay}/>
+                <div className={styles.maskOverlay}/>
             :
                 ''
             }

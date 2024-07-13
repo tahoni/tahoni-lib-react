@@ -2,8 +2,8 @@ import {ReactElement} from "react";
 import {Container} from "react-bootstrap";
 import Slider, {Settings} from "react-slick";
 import {ImageSourceDescription} from "../../model/ImageSourceDescription.ts";
-import {Cover} from "../cover/cover.tsx";
-import "./cover-carousel.scss";
+import {Cover} from "../Cover";
+import "./styles.scss";
 
 export const CoverCarousel = (props: CoverCarouselProps): ReactElement => {
     const settings: Settings = {
@@ -22,6 +22,7 @@ export const CoverCarousel = (props: CoverCarouselProps): ReactElement => {
 
     return (
         <Container fluid id="slider-container">
+
             <Slider {...settings}>
                 {(props.slides.map((value: ImageSourceDescription, index: number) => {
                     return (
@@ -31,6 +32,7 @@ export const CoverCarousel = (props: CoverCarouselProps): ReactElement => {
                     )
                 }))}
             </Slider>
+
         </Container>
     );
 }

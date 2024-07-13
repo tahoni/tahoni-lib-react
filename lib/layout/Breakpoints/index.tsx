@@ -1,5 +1,5 @@
 import {ReactElement} from "react";
-import classes from "./breakpoints.module.scss";
+import styles from "./styles.module.scss";
 
 export const Breakpoints = (): ReactElement => {
     return (
@@ -9,9 +9,9 @@ export const Breakpoints = (): ReactElement => {
         // https://stackoverflow.com/questions/65319012/display-bootstrap-breakpoint-name-when-resizing-the-screen
         // https://stackoverflow.com/users/1579939/natwar-singh
 */
-        <div id="breakpoints" className={classes.breakpoints}>
+        <div id="breakpoints" className={styles.breakpoints}>
             {import.meta.env.DEV ?
-                <div className={classes.breakpoint}>
+                <div className={styles.breakpoint}>
                 <div className="d-block d-sm-none">Extra Small (xs)</div>
                 <div className="d-none d-sm-block d-md-none">Small (sm)</div>
                 <div className="d-none d-md-block d-lg-none">Medium (md)</div>
