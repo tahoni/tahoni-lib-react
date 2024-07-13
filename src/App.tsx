@@ -1,14 +1,14 @@
-import {Breakpoints} from "tahoni-lib/layout/Breakpoints";
-// import {MaskOverlay} from "../lib/components/index.js";
-// import {Loader} from "../lib/components/index.js";
+import {Breakpoints} from "../lib/layout/Breakpoints";
+import {MaskOverlay} from "../lib/components/MaskOverlay";
+import {Loader} from "../lib/components/Loader";
 import './App.scss'
 
 function App() {
   return (
     <>
       <Breakpoints/>
-      {/*<MaskOverlay mask={true}/>*/}
-      {/*<Loader isLoading={true}/>*/}
+      <MaskOverlay mask={true}/>
+      <Loader isLoading={true}/>
     </>
   )
 }

@@ -11,11 +11,11 @@ export default defineConfig({
   plugins: [
     react(),
     tsconfigPaths(),
-    dts({ rollupTypes: true }), // Output .d.ts files
+    dts(),
   ],
   build: {
     target: 'ESNext',
-    minify: true,
+    minify: false,
     sourcemap: false,
     copyPublicDir: false,
     lib: {
@@ -29,7 +29,6 @@ export default defineConfig({
       // make sure to externalize deps that shouldn't be bundled
       // into your library
       // Exclude peer dependencies from the bundle to reduce bundle size
-      // external: ['react/jsx-runtime', ...Object.keys(peerDependencies)],
       external: ['react', 'react/jsx-runtime',...Object.keys(peerDependencies)],
       output: {
         // Provide global variables to use in the UMD build
