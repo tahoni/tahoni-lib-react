@@ -1,6 +1,6 @@
-import {Breakpoints} from "./layout/breakpoints/breakpoints.tsx";
-import {MaskOverlay} from "./components/overlay/overlay.tsx";
-import {Loader} from "./components/loader/loader.tsx";
+import {Breakpoints} from "./layout";
+import {MaskOverlay} from "./components";
+import {Loader} from "./components";
 import './App.scss'
 
 function App() {
@@ -13,4 +13,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
