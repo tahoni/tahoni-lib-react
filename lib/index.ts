@@ -1,4 +1,4 @@
-import "./assets/stylesheets/styles.scss";
+import "./styles.scss";
 
 export {ImageSourceDescription} from "./model/ImageSourceDescription.ts";
 

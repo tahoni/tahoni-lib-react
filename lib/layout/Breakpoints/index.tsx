@@ -10,16 +10,14 @@ export const Breakpoints = (): ReactElement => {
         // https://stackoverflow.com/users/1579939/natwar-singh
 */
         <div id="breakpoints" className="breakpoints">
-            {import.meta.env.DEV ?
-                <div className="breakpoint">
-                    <div className="d-block d-sm-none">Extra Small (xs)</div>
-                    <div className="d-none d-sm-block d-md-none">Small (sm)</div>
-                    <div className="d-none d-md-block d-lg-none">Medium (md)</div>
-                    <div className="d-none d-lg-block d-xl-none">Large (lg)</div>
-                    <div className="d-none d-xl-block d-xxl-none">X-Large (xl)</div>
-                    <div className="d-none d-xxl-block">XX-Large (xxl)</div>
-                </div>
-            : ''}
+            <div className="breakpoint">
+                <div className="d-block d-sm-none">Extra Small (xs)</div>
+                <div className="d-none d-sm-block d-md-none">Small (sm)</div>
+                <div className="d-none d-md-block d-lg-none">Medium (md)</div>
+                <div className="d-none d-lg-block d-xl-none">Large (lg)</div>
+                <div className="d-none d-xl-block d-xxl-none">X-Large (xl)</div>
+                <div className="d-none d-xxl-block">XX-Large (xxl)</div>
+            </div>
         </div>
     )
 }

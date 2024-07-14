@@ -12,7 +12,7 @@ import {peerDependencies} from './package.json';
 export default defineConfig({
   plugins: [
     react(),
-    dts({include: ['lib']}),
+    dts(),
     libInjectCss(),
   ],
   build: {
@@ -22,7 +22,7 @@ export default defineConfig({
     copyPublicDir: false,
     lib: {
       // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, 'lib/main.ts'),
+      entry: resolve(__dirname, 'lib/index.ts'),
       name: 'TahoniLib',
       // the proper extensions will be added
       fileName: 'tahoni-lib',
