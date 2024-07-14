@@ -1,0 +1,58 @@
+#slider-container {
+  width: 100%;
+  height: 100%;
+}
+
+.slick-slider {
+  width: calc(100% - 3em);
+  padding: 1.5em;
+}
+
+.slick-slider, .slick-list, .slick-track {
+  height: 100%;
+  margin: auto;
+}
+
+.slick-list, .slick-track {
+  width: 100%;
+}
+
+.slick-arrow::before, .slick-dots li button::before {
+  font-family: var(--tl-cover-carousel-nav-font-family), sans-serif !important;
+  font-weight: bold !important;
+  color: var(--tl-cover-carousel-nav-color, black) !important;
+}
+
+.slick-dots li button, .slick-dots li button::before {
+  font-size: 0.85em !important;
+  opacity: 0.6;
+}
+
+.slick-dots li.slick-active button::before {
+  font-weight: bolder !important;
+  opacity: 1 !important;
+}
+
+.slick-arrow, .slick-arrow::before {
+  font-size: 1.2em !important;
+}
+
+.slick-arrow.slick-next {
+  margin: 0 1em 0 0;
+}
+
+.slick-arrow.slick-prev {
+  margin: 0 0 0 1em;
+}
+
+#slider-container > div > div > div > div > div {
+  height: 100%;
+}
+
+#slider-container > div > div > div > div.slick-slide.slick-active.slick-current {
+  height: 100%;
+}
+
+#slider-container > div > div > div > div.slick-slide.slick-active.slick-current > div > div {
+  height: 100%;
+}

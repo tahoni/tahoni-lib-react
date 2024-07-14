@@ -1,0 +1,50 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+.cover {
+  position: relative;
+  height: 100%;
+}
+
+.cover h1 {
+  font-size: 2em;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.coverImage {
+  max-height: 100%;
+  border: 1px solid transparent;
+  border-image: var(--tl-cover-gradient, none) 1 fill;
+  opacity: 0.5;
+}
+
+.coverOverlay {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: auto;
+  height: 100%;
+  border: 1px solid transparent;
+  border-image: var(--tl-cover-gradient, none) 1 fill;
+}
+
+.coverText {
+  color: var(--tl-cover-text-color, black);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@include media-breakpoint-up(sm) {
+  .cover h1 {
+    font-size: 3em;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .cover h1 {
+    font-size: 4em;
+  }
+}
