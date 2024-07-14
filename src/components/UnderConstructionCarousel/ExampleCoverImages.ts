@@ -5,12 +5,12 @@ import waterLilyImage from "./images/water-lilies.jpg";
 
 export class ExampleCoverImages {
     static underConstructionLadyImage: ImageSourceDescription =
-        {source: ladyShooterOnIpscRangeImage,
+        {image: ladyShooterOnIpscRangeImage,
             description: 'Lady shooter on IPSC range'};
     static underConstructionTargetImage: ImageSourceDescription =
-        {source: ipscTargetWithBulletHoles,
+        {image: ipscTargetWithBulletHoles,
             description: 'IPSC target with bullet holes'};
     static waterLilyImage: ImageSourceDescription =
-        {source: waterLilyImage,
+        {image: waterLilyImage,
             description: 'Water lilies in a pond'};
 }

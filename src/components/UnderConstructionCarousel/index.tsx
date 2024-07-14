@@ -6,13 +6,13 @@ import {ExampleCoverImages} from "./ExampleCoverImages.ts";
 export const ExampleCarousel = (): ReactElement => {
     const exampleText: string = 'Example';
     const underConstructionSlides: ImageSourceDescription[] = [
-        {source: ExampleCoverImages.underConstructionLadyImage.source,
+        {image: ExampleCoverImages.underConstructionLadyImage.image,
             description: ExampleCoverImages.underConstructionLadyImage.description,
             text: exampleText},
-        {source: ExampleCoverImages.underConstructionTargetImage.source,
+        {image: ExampleCoverImages.underConstructionTargetImage.image,
             description: ExampleCoverImages.underConstructionTargetImage.description,
             text: exampleText},
-        {source: ExampleCoverImages.waterLilyImage.source,
+        {image: ExampleCoverImages.waterLilyImage.image,
             description: ExampleCoverImages.waterLilyImage.description,
             text: exampleText},
     ];

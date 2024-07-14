@@ -5,9 +5,9 @@ import "./styles.scss";
 
 export const Loader = (props: LoaderProps) => {
     const loaderOverrides: CSSProperties = {
-        top: "50%",
-        left: "50%",
-        position: "absolute",
+        top: '50%',
+        left: '50%',
+        position: 'absolute',
         zIndex: 88888,
     };
 
@@ -20,6 +20,6 @@ export const Loader = (props: LoaderProps) => {
     );
 }
 
-interface LoaderProps {
+export interface LoaderProps {
     isLoading: boolean;
 }

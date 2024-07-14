@@ -13,6 +13,6 @@ export const MaskOverlay = (props: MaskOverlayProps): ReactElement => {
     );
 }
 
-interface MaskOverlayProps {
+export interface MaskOverlayProps {
     mask: boolean;
 }
