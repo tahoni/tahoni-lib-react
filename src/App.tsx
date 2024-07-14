@@ -1,14 +1,14 @@
-import {Breakpoints} from "..";
-import {MaskOverlay} from "..";
-import {Loader} from "..";
+import {Breakpoints} from "../lib";
+import {MaskOverlay} from "../lib";
+import {Loader} from "../lib";
 import './App.scss'
 
 function App() {
   return (
     <>
-      <Breakpoints/>
-      <MaskOverlay mask={true}/>
-      <Loader isLoading={true}/>
+        <Breakpoints/>
+        <MaskOverlay mask={false}/>
+        <Loader isLoading={false}/>
     </>
   )
 }

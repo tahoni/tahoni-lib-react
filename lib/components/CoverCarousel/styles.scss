@@ -9,27 +9,32 @@
 }
 
 .slick-slider, .slick-list, .slick-track {
-  width: 100%;
   height: 100%;
   margin: auto;
 }
 
-.slick-arrow::before, .slick-dots li button:before {
-  font-weight: bold;
-  color: var(--tl-heading-text-color, black) !important;
+.slick-list, .slick-track {
+  width: 100%;
 }
 
-.slick-dots li button:before {
-  font-size: 0.75em !important;
+.slick-arrow::before, .slick-dots li button::before {
+  font-family: var(--tl-cover-carousel-nav-font-family), sans-serif !important;
+  font-weight: bold !important;
+  color: var(--tl-cover-carousel-nav-color, black) !important;
+}
+
+.slick-dots li button, .slick-dots li button::before {
+  font-size: 0.85em !important;
   opacity: 0.6;
 }
 
-.slick-dots li.slick-active button:before {
+.slick-dots li.slick-active button::before {
+  font-weight: bolder !important;
   opacity: 1 !important;
 }
 
-.slick-arrow::before {
-  font-size: 1.5em !important;
+.slick-arrow, .slick-arrow::before {
+  font-size: 1.2em !important;
 }
 
 .slick-arrow.slick-next {

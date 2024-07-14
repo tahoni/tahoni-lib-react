@@ -11,8 +11,8 @@ import {peerDependencies} from './package.json';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react(),
-    dts(),
+    react({include: ["lib"]}),
+    dts({include: ["lib"]}),
     libInjectCss(),
   ],
   build: {

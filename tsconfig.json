@@ -22,15 +22,10 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noUncheckedIndexedAccess": true,
-    "noImplicitAny": false,
 
     "sourceMap": false,
     "declaration": true,
     "declarationMap": false
   },
-  "include": ["lib"]
+  "include": ["lib","src"]
 }
