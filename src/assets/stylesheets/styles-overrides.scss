@@ -1,0 +1,38 @@
+:root {
+  /* Font Families */
+  --text-font-family: var(--noto-sans-font-family);
+  --heading-text-font-family: var(--noto-sans-display-font-family);
+  --code-text-font-family: var(--noto-code-font-family);
+
+  /* Fonts */
+  --text-font: var(--noto-sans-font);
+  --heading-text-font: var(--noto-sans-display-font);
+
+  /* Colours */
+  --background-color: lavenderblush;
+  --loader-color: lightpink;
+  --text-color: hotpink;
+  --heading-text-color: deeppink;
+  --cover-text-color: mediumvioletred;
+
+  /* Gradients */
+  --overlay-gradient: radial-gradient(circle, rgba(255,192,203,1) 0%, rgba(255,105,180,1) 35%, rgba(255,20,147,1) 100%);;
+  --cover-gradient: linear-gradient(90deg, rgba(255,192,203,1) 0%, rgba(255,105,180,1) 35%, rgba(255,20,147,1) 100%);;
+}
+
+/* TahoniLib */
+:root {
+  --tl-loader-color: var(--loader-color);
+  --tl-cover-gradient: var(--cover-gradient);
+  --tl-overlay-gradient: var(--overlay-gradient);
+  --tl-cover-carousel-nav-font-family: var(--heading-text-font-family);
+  --tl-cover-carousel-nav-color: var(--heading-text-color);
+  --tl-cover-text-color: var(--cover-text-color);
+}
+
+/* Bootstrap */
+:root, [data-bs-theme=light] {
+  --bs-font-sans-serif: var(--text-font-family);
+  --bs-font-monospace: var(--code-text-font-family);
+  --bs-body-bg: var(--background-color);
+}
