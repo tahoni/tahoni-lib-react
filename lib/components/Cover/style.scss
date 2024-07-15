@@ -14,15 +14,17 @@
 }
 
 .coverImage {
+  width: auto;
   max-height: 100%;
   border: 1px solid transparent;
   border-image: var(--tl-cover-gradient, none) 1 fill;
+  //object-fit: scale-down;
+  //object-position: 0;
   opacity: 0.5;
 }
 
 .coverOverlay {
-  display: inline-flex;
-  flex: 0 0 auto;
+  display: block;
   width: auto;
   height: 100%;
   border: 1px solid transparent;
