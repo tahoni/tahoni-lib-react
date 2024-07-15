@@ -6,6 +6,7 @@ import {Cover, CoverCssProperties, CoverProps, CoverSlideObject} from "../Cover"
 import "./styles.scss";
 
 export const CoverCarousel = (props: CoverCarouselProps): ReactElement => {
+    // Initial CSS override properties
     const firstCoverCssOverrides: CoverCssProperties = {
         cssOverride: {
             border: '1px solid transparent',
@@ -20,6 +21,7 @@ export const CoverCarousel = (props: CoverCarouselProps): ReactElement => {
         }
     }
 
+    // Initialize all the slides
     const initialCoverSlides: Map<number, CoverProps> = new Map();
     let index: number = 0;
     for (const slide of props.slides) {
@@ -34,6 +36,7 @@ export const CoverCarousel = (props: CoverCarouselProps): ReactElement => {
         ++index;
     }
 
+    // Initialize all the slide refs
     const initialCoverSlideRefs: Map<number, MutableRefObject<HTMLDivElement | null>> =
         new Map();
     const initialRefs: Array<MutableRefObject<HTMLDivElement | null>> =
@@ -44,6 +47,7 @@ export const CoverCarousel = (props: CoverCarouselProps): ReactElement => {
         ++index;
     }
 
+    // Slides properties
     const sliderContainerRef: MutableRefObject<HTMLDivElement | null> =
         useRef(null);
     const coverSlides: MutableRefObject<Map<number, CoverProps>> =
@@ -51,49 +55,57 @@ export const CoverCarousel = (props: CoverCarouselProps): ReactElement => {
     const coverSlideRefsMap: MutableRefObject<Map<number, MutableRefObject<HTMLDivElement | null>>> =
         useRef(initialCoverSlideRefs);
 
+    // Select a slide using its index
     const selectSlide = (slideNumber: number) => {
+        // The height of the slider content
         const slideHeight: number =
             ((sliderContainerRef?.current) ?
                 sliderContainerRef.current?.clientHeight || window.innerHeight :
                 window.innerHeight);
-        console.log('slideHeight', slideHeight);
 
+        // Get the selected slide and its ref from the property arrays
         const currentCoverSlide: CoverProps | undefined =
             coverSlides.current?.get(slideNumber);
         const currentSlideRef: MutableRefObject<HTMLDivElement | null> | undefined =
             coverSlideRefsMap.current?.get(slideNumber);
 
+        // Set the currently selected slide
         setCurrentSlide(currentCoverSlide);
 
         if (currentCoverSlide && currentSlideRef) {
+            // Get the slide image
             const image: HTMLImageElement | null | undefined =
                 currentSlideRef.current?.querySelector("img");
 
             if (image) {
+                // Get the image height
                 const imageHeight: number = image.height;
-                console.log('imageHeight', imageHeight);
+                // Get the slide overlay
                 const coverOverlay: HTMLDivElement | null | undefined =
                     currentSlideRef.current?.querySelector('.coverOverlay');
 
                 if (coverOverlay) {
+                    // Calculate the final image height
                     const cssHeight: number = (imageHeight <= slideHeight ?
                         imageHeight : slideHeight);
 
+                    // Set the slide image's height
                     currentCoverSlide.cssProperties = new CoverCssProperties({
                         ...currentCoverSlide.cssProperties?.cssOverride,
                         visibility: 'visible',
                         height: cssHeight + 'px',
                         borderImage: 'var(--tl-cover-gradient, none) 1 fill',
                     });
-                    console.log('height', cssHeight);
                 }
             }
         }
     }
 
+    // Currently selected slide
     const [currentSlide, setCurrentSlide] =
         useState<CoverProps | null | undefined>(null);
 
+    // Slider settings
     const settings: Settings = {
         accessibility: true,
         dots: (props.slides.length > 1),
@@ -118,7 +130,7 @@ export const CoverCarousel = (props: CoverCarouselProps): ReactElement => {
                         const coverSlide: CoverProps | undefined =
                             coverSlides.current.get(key);
                         const coverSlideRef: MutableRefObject<HTMLDivElement | null> | undefined =
-                            coverSlideRefsMap.current?.get(key);
+                            coverSlideRefsMap.current.get(key);
 
                         if (coverSlideRef && coverSlide) {
                             coverSlideRefsMap.current.set(key, coverSlideRef);
