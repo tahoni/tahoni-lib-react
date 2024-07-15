@@ -110,7 +110,9 @@ and test iteratively without having to continually rebuild.
 
 #### `npm publish`
 Published the library in the `dist` folder to npm.\
-Publishes a package to the registry so that it can be installed by name.
+Publishes a package to the registry so that it can be installed by name.\
+The `npm prepublishOnly` script ensures that the package is always built 
+before it is published.
 
 #### `npm pack`
 Packages the library in the `dist` folder to a tarball.\

@@ -24,12 +24,12 @@ export const CoverCarousel = (props: CoverCarouselProps): ReactElement => {
     // Initialize all the slides
     const initialCoverSlides: Map<number, CoverProps> = new Map();
     let index: number = 0;
-    for (const slide of props.slides) {
+    for (let slide of props.slides) {
         const coverSlideObject: CoverProps =
             {
                 slide: new CoverSlideObject(slide.image, slide.description,
-                    slide.text || ''),
-                cssProperties: (index == 0 ?
+                    slide.text ?? ''),
+                cssProperties: (index === 0 ?
                     firstCoverCssOverrides : coverCssOverrides),
             }
         initialCoverSlides.set(index, coverSlideObject);
@@ -40,9 +40,9 @@ export const CoverCarousel = (props: CoverCarouselProps): ReactElement => {
     const initialCoverSlideRefs: Map<number, MutableRefObject<HTMLDivElement | null>> =
         new Map();
     const initialRefs: Array<MutableRefObject<HTMLDivElement | null>> =
-        Array(initialCoverSlides.size).fill(useRef(null));
+        Array(props.slides.length).fill(useRef(null));
     index = 0;
-    for (const ref of initialRefs) {
+    for (let ref of initialRefs) {
         initialCoverSlideRefs.set(index, {...ref});
         ++index;
     }
@@ -60,7 +60,7 @@ export const CoverCarousel = (props: CoverCarouselProps): ReactElement => {
         // The height of the slider content
         const slideHeight: number =
             ((sliderContainerRef?.current) ?
-                sliderContainerRef.current?.clientHeight || window.innerHeight :
+                sliderContainerRef.current?.clientHeight ?? window.innerHeight :
                 window.innerHeight);
 
         // Get the selected slide and its ref from the property arrays
@@ -119,28 +119,32 @@ export const CoverCarousel = (props: CoverCarouselProps): ReactElement => {
         slidesToShow: 1,
         slidesToScroll: 1,
 
-        afterChange: (currentSlide: number) => selectSlide(currentSlide),
+        afterChange: (currentSlide: number): void => {
+            selectSlide(currentSlide)
+        },
     };
 
    return (
         <Container fluid id="slider-container" ref={sliderContainerRef}>
-            {(coverSlides.current?.size > 0 ?
+            {(((coverSlides.current) && (coverSlides.current.size > 0)) ?
                 <Slider {...settings}>
-                    {Array.from(coverSlides.current.keys()).map((key: number) => {
-                        const coverSlide: CoverProps | undefined =
-                            coverSlides.current.get(key);
-                        const coverSlideRef: MutableRefObject<HTMLDivElement | null> | undefined =
-                            coverSlideRefsMap.current.get(key);
+                    {(coverSlides.current.keys() ?
+                        Array.from(coverSlides.current.keys()).map((key: number) => {
+                            const coverSlide: CoverProps | undefined =
+                                coverSlides.current.get(key);
+                            const coverSlideRef: MutableRefObject<HTMLDivElement | null> | undefined =
+                                coverSlideRefsMap.current.get(key);
 
-                        if (coverSlideRef && coverSlide) {
-                            coverSlideRefsMap.current.set(key, coverSlideRef);
-                            return (
-                                <Cover slide={coverSlide?.slide}
-                                       cssProperties={coverSlide?.cssProperties}
-                                       ref={coverSlideRef} key={key}/>
-                            )
-                        }
-                    })}
+                            if (coverSlideRef && coverSlide) {
+                                coverSlideRefsMap.current.set(key, coverSlideRef);
+                                return (
+                                    <Cover slide={coverSlide?.slide}
+                                           cssProperties={coverSlide?.cssProperties}
+                                           ref={coverSlideRef} key={key}/>
+                                )
+                            }
+                        })
+                    : '')}
                 </Slider>
             : '')}
         </Container>
