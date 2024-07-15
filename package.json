@@ -1,6 +1,7 @@
 {
   "name": "@tahoni/tahoni-lib-react",
   "author": "Leoni Lubbinge <tahoni@gmail.com>",
+  "description": "React component library",
   "version": "2.0.0",
   "type": "module",
   "scripts": {
