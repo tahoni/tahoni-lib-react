@@ -8,10 +8,10 @@ export const Cover = forwardRef((props: CoverProps, ref: React.ForwardedRef<HTML
             <Row className="d-flex h-100 align-items-center justify-content-center">
                 <Col className="d-flex h-100 align-items-center justify-content-center">
                     <div style={props.cssProperties?.cssOverride} className="coverOverlay">
-                        <Image fluid src={props.object?.image}
-                               alt={props.object?.description}
+                        <Image fluid src={props.slide?.image}
+                               alt={props.slide?.description}
                                className="coverImage"/>
-                        <h1 className="coverText">{props.object?.text}</h1>
+                        <h1 className="coverText">{props.slide?.text}</h1>
                     </div>
                 </Col>
             </Row>
@@ -20,7 +20,7 @@ export const Cover = forwardRef((props: CoverProps, ref: React.ForwardedRef<HTML
 })
 
 export interface CoverProps {
-    object?: CoverSlideObject;
+    slide?: CoverSlideObject;
     cssProperties?: CoverCssProperties;
 }
 

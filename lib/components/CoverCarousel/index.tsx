@@ -27,7 +27,7 @@ export const CoverCarousel = (props: CoverCarouselProps): ReactElement => {
     for (const slide of props.slides) {
         const coverSlideObject: CoverProps =
             {
-                object: new CoverSlideObject(slide.image, slide.description,
+                slide: new CoverSlideObject(slide.image, slide.description,
                     slide.text || ''),
                 cssProperties: (index == 0 ?
                     firstCoverCssOverrides : coverCssOverrides),
@@ -135,7 +135,7 @@ export const CoverCarousel = (props: CoverCarouselProps): ReactElement => {
                         if (coverSlideRef && coverSlide) {
                             coverSlideRefsMap.current.set(key, coverSlideRef);
                             return (
-                                <Cover object={coverSlide?.object}
+                                <Cover slide={coverSlide?.slide}
                                        cssProperties={coverSlide?.cssProperties}
                                        ref={coverSlideRef} key={key}/>
                             )
