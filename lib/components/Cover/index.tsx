@@ -1,4 +1,4 @@
-import React, {CSSProperties, forwardRef, useEffect, useState} from "react";
+import React, {CSSProperties, forwardRef} from "react";
 import {Col, Container, Image, Row} from "react-bootstrap";
 import "./style.scss";
 
@@ -7,11 +7,11 @@ export const Cover = forwardRef((props: CoverProps, ref: React.ForwardedRef<HTML
         <Container fluid id="cover" className="cover" ref={ref}>
             <Row className="d-flex h-100 align-items-center justify-content-center">
                 <Col className="d-flex h-100 align-items-center justify-content-center">
-                    <div style={props.object.cssOverrides} className="coverOverlay">
-                        <Image fluid src={props.object.image}
-                               alt={props.object.description}
+                    <div style={props.cssProperties?.cssOverride} className="coverOverlay">
+                        <Image fluid src={props.object?.image}
+                               alt={props.object?.description}
                                className="coverImage"/>
-                        <h1 className="coverText">{props.object.text}</h1>
+                        <h1 className="coverText">{props.object?.text}</h1>
                     </div>
                 </Col>
             </Row>
@@ -20,21 +20,26 @@ export const Cover = forwardRef((props: CoverProps, ref: React.ForwardedRef<HTML
 })
 
 export interface CoverProps {
-    object: CoverObject;
+    object?: CoverSlideObject;
+    cssProperties?: CoverCssProperties;
 }
 
-export class CoverObject {
+export class CoverSlideObject {
     image: string;
     description: string;
     text: string;
-    cssOverrides: CSSProperties;
 
-    constructor(image: string, description: string, text: string,
-                cssOverrides: React.CSSProperties) {
+    constructor(image: string, description: string, text: string) {
         this.image = image;
         this.description = description;
         this.text = text;
-        this.cssOverrides = cssOverrides;
     }
 }
 
+export class CoverCssProperties {
+    cssOverride: CSSProperties;
+
+    constructor(cssOverride: CSSProperties) {
+        this.cssOverride = cssOverride;
+    }
+}
