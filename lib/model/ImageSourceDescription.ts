@@ -1,10 +1,10 @@
 export class ImageSourceDescription {
-    source: string;
+    image: string;
     description: string;
     text?: string;
 
     constructor(source: string, description: string, text?: string) {
-        this.source = source;
+        this.image = source;
         this.description = description;
         this.text = text;
     }

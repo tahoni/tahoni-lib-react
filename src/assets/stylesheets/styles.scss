@@ -1,0 +1,16 @@
+@import "styles-fonts";
+@import "styles-overrides";
+@import "styles-theme";
+
+/* General */
+html, body {
+    font-family: $text-font-family;
+    color: $text-color;
+    background-color: $background-color;
+}
+
+/* Headings */
+h1 {
+    font-family: $heading-text-font-family;
+    color: $heading-text-color;
+}

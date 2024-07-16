@@ -3,12 +3,6 @@ import "./styles.scss";
 
 export const Breakpoints = (): ReactElement => {
     return (
-/*
-        // Solution by Natwar Singh in reply to the following question on Stack Overflow:
-        // "Display Bootstrap breakpoint name when resizing the screen"
-        // https://stackoverflow.com/questions/65319012/display-bootstrap-breakpoint-name-when-resizing-the-screen
-        // https://stackoverflow.com/users/1579939/natwar-singh
-*/
         <div id="breakpoints" className="breakpoints">
             <div className="breakpoint">
                 <div className="d-block d-sm-none">Extra Small (xs)</div>
