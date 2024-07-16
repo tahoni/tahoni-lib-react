@@ -2,7 +2,7 @@
   "name": "@tahoni/tahoni-lib-react",
   "author": "Leoni Lubbinge <tahoni@gmail.com>",
   "description": "React component library",
-  "version": "2.0.50",
+  "version": "2.0.55",
   "type": "module",
   "scripts": {
     "dev": "vite build && vite",
