@@ -20,6 +20,6 @@ export const Loader = (props: LoaderProps) => {
     );
 }
 
-export interface LoaderProps {
+interface LoaderProps {
     isLoading: boolean;
 }

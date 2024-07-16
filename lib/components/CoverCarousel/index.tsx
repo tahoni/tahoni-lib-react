@@ -119,8 +119,8 @@ export const CoverCarousel = (props: CoverCarouselProps): ReactElement => {
         slidesToShow: 1,
         slidesToScroll: 1,
 
-        afterChange: (currentSlide: number): void => {
-            selectSlide(currentSlide)
+        afterChange: (currentSlideNumber: number): void => {
+            selectSlide(currentSlideNumber)
         },
     };
 
@@ -151,7 +151,7 @@ export const CoverCarousel = (props: CoverCarouselProps): ReactElement => {
     );
 }
 
-export interface CoverCarouselProps {
+interface CoverCarouselProps {
     slides: ImageSourceDescription[];
     infinite: boolean;
     autoPlay: boolean;

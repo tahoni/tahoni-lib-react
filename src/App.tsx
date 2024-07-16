@@ -1,6 +1,6 @@
-import {Breakpoints} from "../lib";
-import {MaskOverlay} from "../lib";
-import {Loader} from "../lib";
+import {Breakpoints} from "..";
+import {MaskOverlay} from "..";
+import {Loader} from "..";
 import {ExampleCarousel} from "./components/UnderConstructionCarousel";
 import './App.scss'
 

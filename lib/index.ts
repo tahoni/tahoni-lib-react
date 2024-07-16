@@ -1,7 +1,3 @@
-import "./styles.scss";
-
-export {ImageSourceDescription} from "./model/ImageSourceDescription.ts";
-
 export {Breakpoints} from "./layout/Breakpoints";
 export {MaskOverlay} from "./components/MaskOverlay";
 export {Loader} from "./components/Loader";

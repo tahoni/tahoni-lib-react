@@ -1,4 +1,4 @@
-import {ImageSourceDescription} from "../../../lib";
+import {ImageSourceDescription} from "../../../dist/model/ImageSourceDescription";
 import ladyShooterOnIpscRangeImage from './images/lady-shooter-on-ipsc-range.png';
 import ipscTargetWithBulletHoles from './images/ipsc-target-with-bullet-holes.png';
 import waterLilyImage from "./images/water-lilies.jpg";

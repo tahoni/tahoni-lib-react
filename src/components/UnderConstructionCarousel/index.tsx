@@ -1,5 +1,5 @@
 import {ReactElement} from "react";
-import {ImageSourceDescription} from "../../../lib";
+import {ImageSourceDescription} from "../../../lib/model/ImageSourceDescription.ts";
 import {CoverCarousel} from "../../../lib";
 import {ExampleCoverImages} from "./ExampleCoverImages.ts";
 
