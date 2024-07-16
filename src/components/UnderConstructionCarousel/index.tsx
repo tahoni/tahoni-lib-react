@@ -1,6 +1,6 @@
 import {ReactElement} from "react";
-import {ImageSourceDescription} from "../../../lib/model/ImageSourceDescription.ts";
-import {CoverCarousel} from "../../../lib";
+import {ImageSourceDescription} from "../../..";
+import {CoverCarousel} from "../../..";
 import {ExampleCoverImages} from "./ExampleCoverImages.ts";
 
 export const ExampleCarousel = (): ReactElement => {
