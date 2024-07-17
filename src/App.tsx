@@ -1,7 +1,7 @@
 import {Breakpoints} from "..";
 import {MaskOverlay} from "..";
 import {Loader} from "..";
-import {ExampleCarousel} from "./components/UnderConstructionCarousel";
+import {ExampleSlider} from "./components/UnderConstructionSlider/ExampleSlider.tsx";
 import './App.scss'
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
         <Breakpoints/>
         <MaskOverlay mask={false}/>
         <Loader isLoading={false}/>
-        <ExampleCarousel/>
+        <ExampleSlider/>
     </>
   )
 }

@@ -1,6 +1,6 @@
 import React, {CSSProperties, forwardRef} from "react";
 import {Col, Container, Image, Row} from "react-bootstrap";
-import "./style.scss";
+import "./Cover.scss";
 
 export const Cover = forwardRef((props: CoverProps, ref: React.ForwardedRef<HTMLDivElement>) => {
     return (

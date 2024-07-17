@@ -1,4 +1,4 @@
-export class ImageSourceDescription {
+export class ImageWithSourceAndDescription {
     image: string;
     description: string;
     text?: string;

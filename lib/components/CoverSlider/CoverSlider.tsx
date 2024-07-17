@@ -1,11 +1,11 @@
 import {MutableRefObject, ReactElement, useRef, useState} from "react";
 import {Container} from "react-bootstrap";
 import Slider, {Settings} from "react-slick";
-import {ImageSourceDescription} from "../../model/ImageSourceDescription.ts";
-import {Cover, CoverCssProperties, CoverProps, CoverSlideObject} from "../Cover";
-import "./styles.scss";
+import {ImageWithSourceAndDescription} from "../../models/ImageWithSourceAndDescription.ts";
+import {Cover, CoverCssProperties, CoverProps, CoverSlideObject} from "../Cover/Cover.tsx";
+import "./CoverSlider.scss";
 
-export const CoverCarousel = (props: CoverCarouselProps): ReactElement => {
+export const CoverSlider = (props: CoverSliderProps): ReactElement => {
     // Initial CSS override properties
     const firstCoverCssOverrides: CoverCssProperties = {
         cssOverride: {
@@ -151,8 +151,8 @@ export const CoverCarousel = (props: CoverCarouselProps): ReactElement => {
     );
 }
 
-interface CoverCarouselProps {
-    slides: ImageSourceDescription[];
+interface CoverSliderProps {
+    slides: ImageWithSourceAndDescription[];
     infinite: boolean;
     autoPlay: boolean;
 }
