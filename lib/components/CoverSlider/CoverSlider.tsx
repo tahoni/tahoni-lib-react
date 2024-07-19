@@ -142,6 +142,8 @@ export const CoverSlider = (props: CoverSliderProps): ReactElement => {
                                            cssProperties={coverSlide?.cssProperties}
                                            ref={coverSlideRef} key={key}/>
                                 )
+                            } else {
+                                return '';
                             }
                         })
                     : '')}
