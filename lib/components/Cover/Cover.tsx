@@ -1,15 +1,13 @@
-import React, {CSSProperties, forwardRef, ForwardRefExoticComponent, RefAttributes} from "react";
+import React, {ReactElement} from "react";
 import {Col, Container, Image, Row} from "react-bootstrap";
 import "./Cover.scss";
 
-export const Cover: ForwardRefExoticComponent<CoverProps & RefAttributes<HTMLDivElement>> =
-    forwardRef((props: CoverProps, ref: React.ForwardedRef<HTMLDivElement>) => {
+export const Cover = (props: CoverProps): ReactElement => {
     return (
-        <Container fluid id="cover" className="cover" ref={ref}>
+        <Container fluid id="cover" className="cover">
             <Row className="d-flex h-100 align-items-center justify-content-center">
                 <Col className="d-flex h-100 align-items-center justify-content-center">
-                    <div style={props.cssProperties?.cssOverride}
-                         className="coverOverlay">
+                    <div className="coverOverlay">
                         <Image fluid src={props.slide?.image}
                                alt={props.slide?.description}
                                className="coverImage"/>
@@ -19,11 +17,10 @@ export const Cover: ForwardRefExoticComponent<CoverProps & RefAttributes<HTMLDiv
             </Row>
         </Container>
     )
-})
+}
 
 export class CoverProps {
     slide?: CoverSlideObject;
-    cssProperties?: CoverCssProperties;
 }
 
 export class CoverSlideObject {
@@ -35,13 +32,5 @@ export class CoverSlideObject {
         this.image = image;
         this.description = description;
         this.text = text;
-    }
-}
-
-export class CoverCssProperties {
-    cssOverride: CSSProperties;
-
-    constructor(cssOverride: CSSProperties) {
-        this.cssOverride = cssOverride;
     }
 }
