@@ -22,8 +22,6 @@ export const CoverSlider = (props: CoverSliderProps): ReactElement => {
     }
 
     // Slides properties
-    const sliderContainerRef: MutableRefObject<HTMLDivElement | null> =
-        useRef(null);
     const coverSlides: MutableRefObject<Map<number, CoverProps>> =
         useRef(initialCoverSlides);
 
@@ -40,6 +38,7 @@ export const CoverSlider = (props: CoverSliderProps): ReactElement => {
     // Slider settings
     const settings: Settings = {
         accessibility: true,
+        fade: true,
         dots: (props.slides.length > 1),
         arrows: (props.slides.length > 1),
         pauseOnHover: true,
@@ -57,7 +56,7 @@ export const CoverSlider = (props: CoverSliderProps): ReactElement => {
     };
 
    return (
-        <div className="slider-container" ref={sliderContainerRef}>
+        <div className="slider-container">
             {(((coverSlides.current) && (coverSlides.current.size > 0)) ?
                 <Slider {...settings}>
                     {(coverSlides.current.keys() ?
@@ -66,9 +65,7 @@ export const CoverSlider = (props: CoverSliderProps): ReactElement => {
                                 coverSlides.current.get(key);
 
                             return (
-                                <Cover slide={coverSlide?.slide}
-                                       cssProperties={coverSlide?.cssProperties}
-                                       key={key}/>
+                                <Cover slide={coverSlide?.slide} key={key}/>
                             )
                         })
                     : '')}

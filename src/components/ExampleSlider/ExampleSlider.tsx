@@ -3,7 +3,7 @@ import {CoverSlider, ImageWithSourceAndDescription} from "../../../lib";
 import {ExampleSliderImages} from "./ExampleSliderImages.ts";
 
 export const ExampleSlider = (): ReactElement => {
-    const exampleText: string = 'Example';
+    const exampleText: string = 'Even longer example text';
     const underConstructionSlides: ImageWithSourceAndDescription[] = [
         {image: ExampleSliderImages.underConstructionLadyImage.image,
             description: ExampleSliderImages.underConstructionLadyImage.description,
