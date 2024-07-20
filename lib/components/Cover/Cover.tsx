@@ -3,22 +3,28 @@ import {Col, Container, Image, Row} from "react-bootstrap";
 import "./Cover.scss";
 
 export const Cover =
-    forwardRef((props: CoverProps, ref: React.ForwardedRef<HTMLDivElement>) => {    return (
-        <Container fluid id="cover" className="cover" ref={ref}>
-            <Row>
-                <Col>
-                    <div style={props.cssProperties?.cssOverride}
-                         className="coverOverlay">
-                        <Image fluid src={props.slide?.image}
-                               alt={props.slide?.description}
-                               className="coverImage"/>
-                        <h1 className="coverText">{props.slide?.text}</h1>
-                    </div>
-                </Col>
-            </Row>
-        </Container>
-    )
-})
+    forwardRef((props: CoverProps, ref: React.ForwardedRef<HTMLDivElement>) => {
+        return (
+            <Container fluid id="cover" className="cover" ref={ref}>
+                <Row className="d-flex h-100 align-items-center justify-content-center">
+                    <Col className="d-flex h-100 align-items-center justify-content-center">
+{/*
+                        <div className="coverOverlay"
+                             style={props.cssProperties?.cssOverride}
+                        >
+*/}
+                            <Image src={props.slide?.image}
+                                   alt={props.slide?.description}
+                                   // className="coverImage"
+                            />
+                            {/*<h1 className="coverText">{props.slide?.text}</h1>*/}
+                        {/*</div>*/}
+                    </Col>
+                </Row>
+            </Container>
+        )
+    }
+)
 
 export class CoverProps {
     slide?: CoverSlideObject;

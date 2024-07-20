@@ -6,16 +6,10 @@ import "./CoverSlider.scss";
 
 export const CoverSlider = (props: CoverSliderProps): ReactElement => {
     // Initial CSS override properties
-    const firstCoverCssOverrides: CoverCssProperties = {
-        cssOverride: {
-            border: '1px solid transparent',
-            borderImage: 'var(--tl-cover-gradient, none) 1 fill',
-        }
-    }
     const coverCssOverrides: CoverCssProperties  = {
         cssOverride: {
             visibility: 'hidden',
-            border: '1px solid transparent',
+            border: '0px solid transparent',
             borderImage: 'none',
         }
     }
@@ -24,13 +18,11 @@ export const CoverSlider = (props: CoverSliderProps): ReactElement => {
     const initialCoverSlides: Map<number, CoverProps> = new Map();
     let index: number = 0;
     for (let slide of props.slides) {
-        const coverSlideObject: CoverProps =
-            {
-                slide: new CoverSlideObject(slide.image, slide.description,
-                    slide.text ?? ''),
-                cssProperties: (index === 0 ?
-                    firstCoverCssOverrides : coverCssOverrides),
-            }
+        const coverSlideObject: CoverProps = {
+            slide: new CoverSlideObject(slide.image, slide.description,
+                slide.text ?? ''),
+            cssProperties: coverCssOverrides,
+        }
         initialCoverSlides.set(index, coverSlideObject);
         ++index;
     }
@@ -60,12 +52,13 @@ export const CoverSlider = (props: CoverSliderProps): ReactElement => {
         useState<CoverProps | null | undefined>(null);
 
     // Select the current slide
-    const selectSlide = (slideNumber: number) => {
+    const selectSlide = (slideNumber: number): void => {
+/*
         // The height of the slider content
-        const slideHeight: number =
-            ((sliderContainerRef?.current) ?
-                sliderContainerRef.current?.clientHeight ?? window.innerHeight :
+        const slideHeight: number = ((sliderContainerRef?.current) ?
+                (sliderContainerRef.current?.clientHeight ?? window.innerHeight) :
                 window.innerHeight);
+        console.log('slideHeight', slideHeight);
 
         // Get the selected slide and its ref from the property arrays
         const currentCoverSlide: CoverProps | undefined =
@@ -77,33 +70,37 @@ export const CoverSlider = (props: CoverSliderProps): ReactElement => {
         setCurrentSlide(currentCoverSlide);
 
         if (currentCoverSlide && currentSlideRef) {
+            // Get the slide overlay
+            const coverOverlay: HTMLDivElement | null | undefined =
+                currentSlideRef.current?.querySelector('.coverOverlay');
+
             // Get the slide image
-            const image: HTMLImageElement | null | undefined =
-                currentSlideRef.current?.querySelector("img");
+            const image: HTMLImageElement | undefined | null =
+                coverOverlay?.querySelector('img');
+            console.log('image', image);
 
-            if (image) {
+            let cssHeight: number = slideHeight;
+            if (coverOverlay && image) {
                 // Get the image height
-                const imageHeight: number = image.height;
-                // Get the slide overlay
-                const coverOverlay: HTMLDivElement | null | undefined =
-                    currentSlideRef.current?.querySelector('.coverOverlay');
+                const imageHeight: number = image.naturalHeight;
+                console.log('imageHeight', imageHeight);
 
-                if (coverOverlay) {
-                    // Calculate the final image height
-                    const cssHeight: number = (imageHeight <= slideHeight ?
-                        imageHeight : slideHeight);
-
-                    // Set the slide image's height
-                    currentCoverSlide.cssProperties = new CoverCssProperties({
-                        ...currentCoverSlide.cssProperties?.cssOverride,
-                        visibility: 'visible',
-                        height: cssHeight + 'px',
-                        borderImage: 'var(--tl-cover-gradient, none) 1 fill',
-                    });
-                }
+                // Calculate the final image height
+                cssHeight = ((imageHeight > 0) && (imageHeight <= slideHeight) ?
+                    imageHeight : slideHeight);
+                console.log('cssHeight', cssHeight);
             }
+
+            // Set the slide image's height
+            currentCoverSlide.cssProperties = new CoverCssProperties({
+                ...currentCoverSlide.cssProperties?.cssOverride,
+                visibility: 'visible',
+                height: cssHeight + 'px',
+                borderImage: 'var(--tl-cover-gradient, none) 1 fill',
+            });
         }
-    }
+*/
+    };
 
     // Slider settings
     const settings: Settings = {
@@ -119,6 +116,9 @@ export const CoverSlider = (props: CoverSliderProps): ReactElement => {
         slidesToShow: 1,
         slidesToScroll: 1,
 
+        onInit: () => {
+            selectSlide(0);
+        },
         afterChange: (currentSlideNumber: number): void => {
             selectSlide(currentSlideNumber);
         },
