@@ -1,24 +1,28 @@
-import React, {ReactElement} from "react";
+import React, {CSSProperties, forwardRef} from "react";
 import {Col, Container, Image, Row} from "react-bootstrap";
 import "./Cover.scss";
 
-export const Cover = (props: CoverProps): ReactElement => {
-    return (
-        <Container fluid id="cover" className="cover">
+export const Cover =
+    forwardRef((props: CoverProps, ref: React.ForwardedRef<HTMLDivElement>) => {    return (
+        <Container fluid id="cover" className="cover" ref={ref}>
             <Row>
-                <Col className="coverOverlay">
-                    <Image fluid src={props.slide?.image}
-                           alt={props.slide?.description}
-                           className="coverImage"/>
-                    <h1 className="coverText">{props.slide?.text}</h1>
+                <Col>
+                    <div style={props.cssProperties?.cssOverride}
+                         className="coverOverlay">
+                        <Image fluid src={props.slide?.image}
+                               alt={props.slide?.description}
+                               className="coverImage"/>
+                        <h1 className="coverText">{props.slide?.text}</h1>
+                    </div>
                 </Col>
             </Row>
         </Container>
     )
-}
+})
 
 export class CoverProps {
     slide?: CoverSlideObject;
+    cssProperties?: CoverCssProperties;
 }
 
 export class CoverSlideObject {
@@ -30,5 +34,13 @@ export class CoverSlideObject {
         this.image = image;
         this.description = description;
         this.text = text;
+    }
+}
+
+export class CoverCssProperties {
+    cssOverride: CSSProperties;
+
+    constructor(cssOverride: CSSProperties) {
+        this.cssOverride = cssOverride;
     }
 }

@@ -18,11 +18,21 @@
   font-size: 2em;
   font-weight: bolder;
   text-align: center;
-  vertical-align: middle;
+}
+
+.coverOverlay {
+  position: relative;
+  display: block;
+  width: auto;
+  height: 100%;
 }
 
 .coverImage {
+  width: auto;
   max-height: 100%;
+  border: 0 solid transparent;
+  border-image: var(--tl-cover-gradient, none) 1 fill;
+  opacity: 0.5;
 }
 
 .coverText {
@@ -31,31 +41,4 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.coverOverlay {
-  position: relative;
-}
-
-.coverOverlay::before {
-  background-image: var(--tl-cover-gradient, transparent);
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0.35;
-}
-
-@include media-breakpoint-up(sm) {
-  .cover h1 {
-    font-size: 3em;
-  }
-}
-
-@include media-breakpoint-up(md) {
-  .cover h1 {
-    font-size: 4em;
-  }
 }
