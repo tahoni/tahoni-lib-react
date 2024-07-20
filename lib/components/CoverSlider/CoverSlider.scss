@@ -3,7 +3,7 @@
 }
 
 .slick-slider {
-  width: calc(100% - 3.5em);
+  width: calc(100% - 3em);
   margin: auto;
   padding: 1.5em;
 }
@@ -41,6 +41,6 @@
   margin: 0 0 0 1em;
 }
 
-.slider-container div {
+div.slider-container div.slick-slide.slick-active.slick-current > div {
   height: 100%;
 }

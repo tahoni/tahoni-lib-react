@@ -1,34 +1,24 @@
-import React, {CSSProperties, forwardRef} from "react";
+import React, {ReactElement} from "react";
 import {Col, Container, Image, Row} from "react-bootstrap";
 import "./Cover.scss";
 
-export const Cover =
-    forwardRef((props: CoverProps, ref: React.ForwardedRef<HTMLDivElement>) => {
-        return (
-            <Container fluid id="cover" className="cover" ref={ref}>
-                <Row className="d-flex h-100 align-items-center justify-content-center">
-                    <Col className="d-flex h-100 align-items-center justify-content-center">
-{/*
-                        <div className="coverOverlay"
-                             style={props.cssProperties?.cssOverride}
-                        >
-*/}
-                            <Image src={props.slide?.image}
-                                   alt={props.slide?.description}
-                                   // className="coverImage"
-                            />
-                            {/*<h1 className="coverText">{props.slide?.text}</h1>*/}
-                        {/*</div>*/}
-                    </Col>
-                </Row>
-            </Container>
-        )
-    }
-)
+export const Cover = (props: CoverProps): ReactElement => {
+    return (
+        <Container fluid id="cover" className="cover">
+            <Row>
+                <Col>
+                    <Image fluid src={props.slide?.image}
+                           alt={props.slide?.description}/>
+                    <h1 className="coverText">{props.slide?.text}</h1>
+                </Col>
+            </Row>
+        </Container>
+    )
+}
+
 
 export class CoverProps {
     slide?: CoverSlideObject;
-    cssProperties?: CoverCssProperties;
 }
 
 export class CoverSlideObject {
@@ -40,13 +30,5 @@ export class CoverSlideObject {
         this.image = image;
         this.description = description;
         this.text = text;
-    }
-}
-
-export class CoverCssProperties {
-    cssOverride: CSSProperties;
-
-    constructor(cssOverride: CSSProperties) {
-        this.cssOverride = cssOverride;
     }
 }
