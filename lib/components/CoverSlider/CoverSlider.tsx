@@ -5,10 +5,6 @@ import {Cover, CoverProps, CoverSlideObject} from "../Cover/Cover.tsx";
 import "./CoverSlider.scss";
 
 export const CoverSlider = (props: CoverSliderProps): ReactElement => {
-    // Currently selected slide
-    const [currentSlide, setCurrentSlide] =
-        useState<CoverProps | null | undefined>(null);
-
     // Initialize all the slides
     const initialCoverSlides: Map<number, CoverProps> = new Map();
     let index: number = 0;
@@ -21,15 +17,25 @@ export const CoverSlider = (props: CoverSliderProps): ReactElement => {
         ++index;
     }
 
-    // Slides properties
+    // Array of all slides
     const coverSlides: MutableRefObject<Map<number, CoverProps>> =
         useRef(initialCoverSlides);
 
-    // Select a slide using its index
-    const selectSlide = (slideNumber: number) => {
-        // Get the selected slide and its ref from the property arrays
-        const currentCoverSlide: CoverProps | undefined =
-            coverSlides.current?.get(slideNumber);
+    // Currently selected slide
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [currentSlide, setCurrentSlide] =
+        useState<CoverProps | null | undefined>(null);
+
+    // Get a slide by its index
+    const getSlide = (slideNumber: number): CoverProps | undefined => {
+        // Get the slide from the array of slides
+        return coverSlides.current?.get(slideNumber);
+    }
+
+    // Select the current slide
+    const selectSlide = (slideNumber: number): void => {
+        // Get the selected slide
+        const currentCoverSlide: CoverProps | undefined = getSlide(slideNumber);
 
         // Set the currently selected slide
         setCurrentSlide(currentCoverSlide);
@@ -38,7 +44,6 @@ export const CoverSlider = (props: CoverSliderProps): ReactElement => {
     // Slider settings
     const settings: Settings = {
         accessibility: true,
-        fade: true,
         dots: (props.slides.length > 1),
         arrows: (props.slides.length > 1),
         pauseOnHover: true,
@@ -51,7 +56,7 @@ export const CoverSlider = (props: CoverSliderProps): ReactElement => {
         slidesToScroll: 1,
 
         afterChange: (currentSlideNumber: number): void => {
-            selectSlide(currentSlideNumber)
+            selectSlide(currentSlideNumber);
         },
     };
 

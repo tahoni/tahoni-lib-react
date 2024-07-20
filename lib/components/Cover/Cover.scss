@@ -3,7 +3,7 @@
 @import "bootstrap/scss/mixins";
 
 .cover {
-  height: 100% !important;
+  height: 100%;
 }
 
 .cover .row, .cover .col {
@@ -28,6 +28,9 @@
 .coverText {
   color: var(--tl-cover-text-color, black);
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .coverOverlay {
