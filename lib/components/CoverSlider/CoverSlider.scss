@@ -1,10 +1,10 @@
-#slider-container {
-  width: 100%;
-  height: 100%;
+.slider-container {
+  height: calc(100% - 25px);
 }
 
 .slick-slider {
   width: calc(100% - 3em);
+  margin: auto;
   padding: 1.5em;
 }
 
@@ -13,14 +13,10 @@
   margin: auto;
 }
 
-.slick-list, .slick-track {
-  width: 100%;
-}
-
 .slick-arrow::before, .slick-dots li button::before {
-  font-family: var(--tl-cover-carousel-nav-font-family), sans-serif !important;
+  font-family: var(--tl-cover-slider-nav-font-family), sans-serif !important;
   font-weight: bold !important;
-  color: var(--tl-cover-carousel-nav-color, black) !important;
+  color: var(--tl-cover-slider-nav-color, black) !important;
 }
 
 .slick-dots li button, .slick-dots li button::before {
@@ -45,14 +41,6 @@
   margin: 0 0 0 1em;
 }
 
-#slider-container > div > div > div > div > div {
-  height: 100%;
-}
-
-#slider-container > div > div > div > div.slick-slide.slick-active.slick-current {
-  height: 100%;
-}
-
-#slider-container > div > div > div > div.slick-slide.slick-active.slick-current > div > div {
+div.slider-container div.slick-slide.slick-active.slick-current > div {
   height: 100%;
 }

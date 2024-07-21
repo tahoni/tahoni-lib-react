@@ -1,5 +1,5 @@
 import {ReactElement} from "react";
-import "./styles.scss";
+import "./MaskOverlay.scss";
 
 export const MaskOverlay = (props: MaskOverlayProps): ReactElement => {
     return (
