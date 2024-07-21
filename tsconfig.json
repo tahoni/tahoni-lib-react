@@ -19,7 +19,14 @@
 
     /* Linting */
     "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitAny": true,
 
     "sourceMap": false,
     "declaration": true,

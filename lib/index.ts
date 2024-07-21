@@ -1,7 +1,7 @@
-export {Breakpoints} from "./layout/Breakpoints";
-export {MaskOverlay} from "./components/MaskOverlay";
-export {Loader} from "./components/Loader";
-export {Cover} from "./components/Cover";
-export {CoverCarousel} from "./components/CoverCarousel";
+export {Breakpoints} from "./layout/Breakpoints/Breakproints.tsx";
+export {MaskOverlay} from "./components/MaskOverlay/MaskOverlay.tsx";
+export {Loader} from "./components/Loader/Loader.tsx";
+export {Cover} from "./components/Cover/Cover.tsx";
+export {CoverSlider} from "./components/CoverSlider/CoverSlider.tsx";
 
-export {ImageSourceDescription} from "./model/ImageSourceDescription.ts";
+export {ImageWithSourceAndDescription} from "./models/ImageWithSourceAndDescription.ts";

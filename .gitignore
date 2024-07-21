@@ -292,8 +292,7 @@ hs_err_pid*
 
 
 ## CUSTOM
-.env.local
+.env.*
 .run/
 build/
 target/
-.idea/material_theme_project_new.xml
