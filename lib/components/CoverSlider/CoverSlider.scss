@@ -2,43 +2,53 @@
   height: calc(100% - 25px);
 }
 
-.slick-slider {
-  width: calc(100% - 3em);
+.slider-container .slick-slider {
+  width: calc(100% - 4rem);
   margin: auto;
   padding: 1.5em;
 }
 
-.slick-slider, .slick-list, .slick-track {
+.slider-container .slick-slider,
+.slider-container .slick-list,
+.slider-container .slick-track {
   height: 100%;
   margin: auto;
 }
 
-.slick-arrow::before, .slick-dots li button::before {
-  font-family: var(--tl-cover-slider-nav-font-family), sans-serif !important;
-  font-weight: bold !important;
-  color: var(--tl-cover-slider-nav-color, black) !important;
+.slider-container .slick-dots {
+  height: 25px;
 }
 
-.slick-dots li button, .slick-dots li button::before {
-  font-size: 0.85em !important;
+.slider-container .slick-arrow::before,
+.slider-container .slick-dots li button::before,
+.slider-container .slick-dots li.slick-active button:before {
+  font-family: var(--tl-cover-slider-nav-font-family), sans-serif;
+  font-weight: bold;
+  color: var(--tl-cover-slider-nav-color, black);
+}
+
+.slider-container .slick-dots li button,
+.slider-container .slick-dots li button::before {
+  font-size: 0.85rem;
   opacity: 0.6;
 }
 
-.slick-dots li.slick-active button::before {
-  font-weight: bolder !important;
-  opacity: 1 !important;
+.slider-container .slick-dots li.slick-active button::before {
+  font-weight: bolder;
+  opacity: 1;
 }
 
-.slick-arrow, .slick-arrow::before {
-  font-size: 1.2em !important;
+.slider-container .slick-arrow,
+.slider-container .slick-arrow::before {
+  font-size: 1.2rem;
 }
 
-.slick-arrow.slick-next {
+.slider-container .slick-arrow.slick-next {
   margin: 0 1em 0 0;
 }
 
-.slick-arrow.slick-prev {
-  margin: 0 0 0 1em;
+.slider-container .slick-arrow.slick-prev {
+  margin: 0 0 0 1rem;
 }
 
 div.slider-container div.slick-slide.slick-active.slick-current > div {

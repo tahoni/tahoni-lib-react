@@ -1,9 +1,16 @@
 /* General */
 html, body {
-    height: 100%;
-    padding: 0 0 0.5em 0;
+    height: 100vh;
 }
 
+body {
+    background-size: contain;
+    background-clip: content-box;
+    background-repeat: repeat repeat;
+    background-attachment: scroll;
+}
+
+/* React */
 #root {
     height: 100%;
 }

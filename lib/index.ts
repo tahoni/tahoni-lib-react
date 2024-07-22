@@ -5,3 +5,6 @@ export {Cover} from "./components/Cover/Cover.tsx";
 export {CoverSlider} from "./components/CoverSlider/CoverSlider.tsx";
 
 export {ImageWithSourceAndDescription} from "./models/ImageWithSourceAndDescription.ts";
+
+export {BlogTopic} from "./models/BlogTopic.ts";
+export {BlogPost} from "./models/BlogPost.ts";

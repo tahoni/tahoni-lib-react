@@ -9,6 +9,10 @@ html, body {
     background-color: $background-color;
 }
 
+body {
+    background-image: url("assets/images/background.png");
+}
+
 /* Headings */
 h1 {
     font-family: $heading-text-font-family;

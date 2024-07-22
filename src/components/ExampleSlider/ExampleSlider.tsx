@@ -18,6 +18,6 @@ export const ExampleSlider = (): ReactElement => {
 
     return (
         <CoverSlider slides={underConstructionSlides}
-                     infinite={true} autoPlay={true}/>
+                     infinite={true} autoPlay={false}/>
     )
 }
