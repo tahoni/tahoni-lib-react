@@ -3,9 +3,9 @@
 }
 
 .slider-container .slick-slider {
-  width: calc(100% - 4rem);
+  width: calc(100% - 3rem - 4rem);
   margin: auto;
-  padding: 1.5em;
+  padding: 1.5rem;
 }
 
 .slider-container .slick-slider,
@@ -40,17 +40,17 @@
 
 .slider-container .slick-arrow,
 .slider-container .slick-arrow::before {
-  font-size: 1.2rem;
+  font-size: 1.75rem;
 }
 
 .slider-container .slick-arrow.slick-next {
-  margin: 0 1em 0 0;
+  margin: 0 1rem 0 0;
 }
 
 .slider-container .slick-arrow.slick-prev {
-  margin: 0 0 0 1rem;
+  margin: 0 0 0 0.5rem;
 }
 
 div.slider-container div.slick-slide.slick-active.slick-current > div {
-  height: 100%;
+  width: 100%;
 }
