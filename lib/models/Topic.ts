@@ -1,4 +1,4 @@
-export class BlogTopic {
+export class Topic {
     private _name: string;
     private _description?: string;
 
