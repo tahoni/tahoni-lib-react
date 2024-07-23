@@ -4,10 +4,7 @@
 
 .cover {
   position: relative;
-  display: flex;
   height: 100%;
-  align-items: center;
-  justify-content: center;
 }
 
 .cover h1 {
@@ -17,7 +14,6 @@
 }
 
 .cover img {
-  display: block;
   width: 100%;
   height: auto;
   max-height: 450px;
