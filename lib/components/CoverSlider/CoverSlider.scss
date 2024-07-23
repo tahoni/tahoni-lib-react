@@ -52,6 +52,10 @@
   margin: 0 0 0 0.5rem;
 }
 
+div.slider-container div.slick-slide.slick-active.slick-current {
+  height: 100%;
+}
+
 div.slider-container div.slick-slide.slick-active.slick-current > div {
   height: 100%;
 }

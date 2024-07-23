@@ -1,5 +1,5 @@
 import {ReactElement} from "react";
-import "./Breakpoints..scss";
+import "./Breakpoints.scss";
 
 export const Breakpoints = (): ReactElement => {
     return (

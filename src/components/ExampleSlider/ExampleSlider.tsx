@@ -1,5 +1,5 @@
 import {ReactElement} from "react";
-import {CoverSlider, ImageWithSourceAndDescription} from "../../../lib";
+import {CoverSlider, ImageWithSourceAndDescription} from "../../..";
 import {ExampleSliderImages} from "./ExampleSliderImages.ts";
 
 export const ExampleSlider = (): ReactElement => {

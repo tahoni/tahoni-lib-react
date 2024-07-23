@@ -3,8 +3,11 @@
 @import "bootstrap/scss/mixins";
 
 .cover {
-  height: 100%;
   position: relative;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .cover h1 {
@@ -14,12 +17,15 @@
 }
 
 .cover img {
-  width: auto;
-  height: 100%;
-  max-width: 100%;
+  display: block;
+  width: 100%;
+  height: auto;
   max-height: 450px;
+  margin-top: auto;
+  margin-bottom: auto;
   border: 0 solid transparent;
   border-image: var(--tl-cover-gradient, none) 1 fill;
+  object-fit: scale-down;
   opacity: 0.5;
 }
 
