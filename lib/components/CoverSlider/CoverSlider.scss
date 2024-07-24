@@ -57,5 +57,6 @@ div.slider-container div.slick-slide.slick-active.slick-current {
 }
 
 div.slider-container div.slick-slide.slick-active.slick-current > div {
+  display: flex;
   height: 100%;
 }

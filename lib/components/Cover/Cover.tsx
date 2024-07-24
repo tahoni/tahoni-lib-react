@@ -7,8 +7,10 @@ export const Cover = (props: CoverProps): ReactElement => {
         <Container fluid className="cover">
             <Row>
                 <Col>
-                    <Image fluid src={props.slide?.image}
-                           alt={props.slide?.description}/>
+                    <div className="coverImage">
+                        <Image fluid src={props.slide?.image}
+                               alt={props.slide?.description}/>
+                    </div>
                     <h1 className="coverText">{props.slide?.text}</h1>
                 </Col>
             </Row>

@@ -1,6 +1,6 @@
-import {Breakpoints} from "..";
-import {MaskOverlay} from "..";
-import {Loader} from "..";
+import {Breakpoints} from "../lib";
+import {MaskOverlay} from "../lib";
+import {Loader} from "../lib";
 import {ExampleSlider} from "./components/ExampleSlider";
 import './App.scss'
 
