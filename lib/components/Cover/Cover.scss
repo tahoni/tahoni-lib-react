@@ -22,6 +22,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 20;
 }
 
 h1.coverText {
@@ -31,10 +32,7 @@ h1.coverText {
 }
 
 .coverImage {
-  display: flex;
-  flex: auto;
-  align-items: center;
-  justify-content: center;
+  position: relative;
 }
 
 .coverImage img {
@@ -44,7 +42,6 @@ h1.coverText {
   object-fit: scale-down;
 }
 
-/*
 .coverImage::before {
   position: absolute;
   background-image: var(--tl-cover-gradient);
@@ -53,10 +50,9 @@ h1.coverText {
   height: 100%;
   top: 0;
   left: 0;
-  opacity: 0.3;
+  opacity: 0.25;
   z-index: 10;
 }
-*/
 
 @include media-breakpoint-up(sm) {
   h1.coverText {
