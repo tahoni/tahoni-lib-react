@@ -3,9 +3,9 @@ export class ImageWithSourceAndDescription {
     description: string;
     text?: string;
 
-    constructor(source: string, description: string, text?: string) {
-        this.image = source;
-        this.description = description;
-        this.text = text;
+    constructor(right: {image: string, description: string, text?: string}) {
+        this.image = right.image;
+        this.description = right.description;
+        this.text = right.text;
     }
 }

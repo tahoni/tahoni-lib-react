@@ -1,9 +1,9 @@
-import {CSSProperties} from "react";
+import {CSSProperties, ReactElement} from "react";
 import {SyncLoader} from "react-spinners";
 import classes from "./Loader.module.scss";
 import "./Loader.scss";
 
-export const Loader = (props: LoaderProps) => {
+export const Loader = (props: LoaderProps): ReactElement => {
     const loaderOverrides: CSSProperties = {
         top: '50%',
         left: '50%',
