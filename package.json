@@ -41,8 +41,8 @@
     "sass": "^1.77.8",
     "slick-carousel": "^1.8.1",
     "typescript": "^5.2.2",
-    "vite": "^5.3.1",
-    "vite-plugin-dts": "^3.9.1",
+    "vite": "^5.3.5",
+    "vite-plugin-dts": "^4.0.1",
     "vite-plugin-lib-inject-css": "^2.1.1"
   }
 }
