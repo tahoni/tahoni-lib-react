@@ -2,7 +2,7 @@ import {ObjectWithNameAndDescription} from "../ObjectWithNameAndDescription.ts";
 import {Topic} from "../topic/Topic.ts";
 import {Category} from "../topic/Category.ts";
 import {Tag} from "../topic/Tag.ts";
-import {WEB_CONTENT_NAME_DEFAULT_LENGTH} from "../../constants/ContentConstants.ts";
+import {NAME_DEFAULT_LENGTH} from "../../constants/ContentConstants.ts";
 
 export class WebContent extends ObjectWithNameAndDescription {
     content: string;
@@ -44,8 +44,8 @@ export class WebContent extends ObjectWithNameAndDescription {
         if (name) {
             return name;
         } else {
-            return (content.length > WEB_CONTENT_NAME_DEFAULT_LENGTH ?
-                content.substring(0, WEB_CONTENT_NAME_DEFAULT_LENGTH) : content)
+            return (content.length > NAME_DEFAULT_LENGTH ?
+                content.substring(0, NAME_DEFAULT_LENGTH) : content)
         }
     }
 }

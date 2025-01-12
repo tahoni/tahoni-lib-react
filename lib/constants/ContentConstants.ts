@@ -1,2 +1,3 @@
-export const WEB_CONTENT_NAME_DEFAULT_LENGTH: number = 24;
-export const BLOG_POST_SUMMARY_DEFAULT_LENGTH: number = 255;
+export const SUBJECT_DEFAULT_LENGTH: number = 124;
+export const NAME_DEFAULT_LENGTH: number = 24;
+export const SUMMARY_DEFAULT_LENGTH: number = 255;
