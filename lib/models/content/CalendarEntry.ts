@@ -7,25 +7,24 @@ export class CalendarEntry extends WebContent {
     startTime: Date;
     endTime?: Date;
 
-    constructor(right: {content: string, topic: Topic, name?: string,
-        description?: string, startTime: Date, endTime?: Date,
-        categories?: Category[], tags?: Tag[], dateCreated?: Date,
-        dateUpdated?: Date}) {
+    constructor(right: {name?: string, subject?: string, description?: string, content: string,
+        startTime: Date, endTime?: Date, topic: Topic, categories?: Category[], tags?: Tag[],
+        dateCreated?: Date, dateUpdated?: Date}) {
 
         super(right);
         this.startTime = right.startTime;
         this.endTime = right.endTime;
     }
 
-    public static createCalendarEntry = (right: {content: string, topic: Topic,
-        name?: string, description?: string, startTime: Date, endTime?: Date,
+    public static createCalendarEntry = (right: {name?: string, subject?: string,
+        description?: string, content: string, startTime: Date, endTime?: Date, topic: Topic,
         categories?: Category[], tags?: Tag[]}): CalendarEntry => {
 
         return new CalendarEntry(right);
     }
 
-    public updateCalendarEntry = (right: {content: string, topic: Topic,
-        name?: string, description?: string, startTime: Date, endTime?: Date,
+    public updateCalendarEntry = (right: {name?: string, subject?: string,
+        description?: string, content: string, startTime: Date, endTime?: Date, topic: Topic,
         categories?: Category[], tags?: Tag[]}): void => {
 
         this.initContent(right);

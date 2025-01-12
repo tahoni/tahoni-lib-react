@@ -14,12 +14,12 @@ export class WebContent extends ObjectWithNameAndDescription {
     readonly dateCreated: Date;
     dateUpdated: Date;
 
-    constructor(right: {content: string, topic: Topic, name?: string,
-        description?: string, categories?: Category[], tags?: Tag[],
+    constructor(right: {name?: string, subject?: string, description?: string, content: string,
+        topic: Topic, categories?: Category[], tags?: Tag[],
         dateCreated?: Date, dateUpdated?: Date}) {
 
         super({name: WebContent.generateName(right.content, right.name),
-            description: right.description});
+            subject: right.subject, description: right.description});
         this.initContent(right);
 
         this.content = right.content;
@@ -28,24 +28,25 @@ export class WebContent extends ObjectWithNameAndDescription {
         this.dateUpdated = right.dateUpdated ?? new Date();
     }
 
-    protected initContent = (right: {content: string, topic: Topic, name?: string,
-        description?: string, categories?: Category[], tags?: Tag[]}): void => {
+    public static generateName = (content: string, name?: string): string => {
+        let result: string = "";
+        if (!name) {
+            result = content.substring(0, Math.min(content.length - 1, NAME_DEFAULT_LENGTH));
+        } else {
+            result = name;
+        }
+        return result;
+    }
 
-        this.initObject({name: WebContent.generateName(right.content,
-                right.name), description: right.description})
+    protected initContent = (right: {name?: string,
+        subject?: string, description?: string, content: string, topic: Topic, categories?: Category[], tags?: Tag[]}): void => {
+
+        const name: string = WebContent.generateName(right.content, right.name);
+        this.initObject({name: name, subject: right.subject, description: right.description})
 
         this.content = right.content;
         this.topic = right.topic;
         this.categories = right.categories ?? [];
         this.tags = right.tags ?? [];
-    }
-
-    public static generateName = (content: string, name?: string): string => {
-        if (name) {
-            return name;
-        } else {
-            return (content.length > NAME_DEFAULT_LENGTH ?
-                content.substring(0, NAME_DEFAULT_LENGTH) : content)
-        }
     }
 }

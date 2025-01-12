@@ -1,5 +1,7 @@
 # Leoni Lubbinge's React library
 
+[//]: # (TODO: bring up to date)
+
 ## Table of contents
 - [Description](#description)
 - [Summary](#summary)
