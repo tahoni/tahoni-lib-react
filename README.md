@@ -1,7 +1,5 @@
 # Leoni Lubbinge's React library
 
-[//]: # (TODO: bring up to date)
-
 ## Table of contents
 - [Description](#description)
 - [Summary](#summary)
@@ -12,18 +10,15 @@
 - [License](#license)
 - [Attributions](#attributions)
 - [Author](#author)
-- [Support](#support)
 
 ## Description
 This project contains the source code for my React component library.
 
 ## Summary
-This project contains the source code for a npm package library
-with reusable React components.\
-It contains common components to be used in multiple React projects.\
-It is a React project bootstrapped using Vite with the TypeScript React template.
-It is written in TypeScript and uses Bootstrap and React Bootstrap
-as the UI framework.
+The repository is a React component library 
+primarily written in TypeScript. 
+It also includes SCSS, HTML, and JavaScript. 
+This library is designed to provide reusable React components.
 
 ## Repository
 The repository for this project is located at 
@@ -32,33 +27,56 @@ The repository for this project is located at
 Feature requests, suggestions for improvements and bugs can be 
 logged using the project's [Issues](https://github.com/tahoni/tahoni-react-lib/issues) page.
 
+An overview of the project can be found at 
+[https://tahoni.info/projects/tahoni-lib-react](https://www.tahoni.info/projects/tahoni-lib-react).
+
 ## Structure
 A high-level structure of the project.
+
+The lib directory contains the library itself, and the src directory contains 
+a sample application to test the library during development.
+
 ```text
-├───dist
-│   ├───components
-│   ├───layout
-│   └───model
+├───.github
+│   └───workflows
 ├───documentation
-│   └───manual
 ├───lib
 │   ├───components
+│   │   ├───Cover
+│   │   ├───CoverSlider
+│   │   ├───Loader
+│   │   └───MaskOverlay
+│   ├───constants
 │   ├───layout
+│   │   └───Breakpoints
 │   └───model
+│       ├───content
+│       └───topic
 ├───public
+│   └───assets
+│       └───images
 └───src
     ├───assets
     │   └───stylesheets
     └───components
+        └───ExampleSlider
 ```
 
-The lib directory contains the library itself and the src directory contains 
-the sample application to test the library while developing.
-
 ## Technology
-A list of the technology used to develop and/or run the project.
 
-**_Languages:_**
+### Overview
+
+This is a React project bootstrapped using Vite with the TypeScript React template.
+
+It is written in TypeScript and uses JSX components.
+
+Bootstrap and React Bootstrap are used for the UI/UX.<br/>
+Styling is done by SCSS stylesheets.
+
+### Technology Stack
+
+#### Languages:
+
 - TypeScript 5
 
   [![TypeScript Badge](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -71,21 +89,24 @@ A list of the technology used to develop and/or run the project.
 
   [![CSS Badge](https://img.shields.io/badge/CSS-1572B6?logo=css3)](https://www.w3.org/)
 
-**_Build Tools:_**
-- npm
+#### Build Tools:
+
+- npm 10
 
   [![npm Badge](https://img.shields.io/badge/npm-CB3837?logo=npm)](https://www.npmjs.com/)
 
-**_Frameworks:_**
+#### Frameworks:
+
 - Vite 5
 
   [![Vite Badge](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 
-- React 18
+- React 19
 
   [![React Badge](https://img.shields.io/badge/React-CB3837?logo=react)](https://react.dev/)
 
-**_Libraries:_**
+#### Libraries:
+
 - Bootstrap 5
 
   [![Bootstrap Badge](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
@@ -95,52 +116,55 @@ A list of the technology used to develop and/or run the project.
   [![React Bootstrap Badge](https://img.shields.io/badge/React_Bootstrap-7952B3?logo=bootstrap&logoColor=white)](https://react-bootstrap.github.io/)
 
 ## Instructions
-In the project directory, you can run:
+The following commands are available in this project 
+to set up the development environment 
+and build the production environment.
+
+#### `npm install`
+This installs the dependencies.
 
 #### `npm run dev`
-Runs the sample app in the development mode.\
+This runs the app in development mode.<br/>
 The page will reload if you make edits.
 
 #### `npm run build`
-Builds the library for production to the `dist` folder.\
-Your library is ready to be published!
+This builds the app for production to the `dist` folder.<br/>
+Your app is ready to be deployed!
+
+#### `npm run preview`
+This previews the app locally in the `dist` folder.<br/>
+Use this to check if the production build looks OK in your local environment.
 
 #### `npm link`
-Installs the library in the `dist` folder locally.\
-This is handy for installing your own stuff, so that you can work on it 
-and test iteratively without having to continually rebuild.
+Installs the library locally in the `dist` folder.<br/>
+This is handy for installing the library while working on it,
+allowing you to test iteratively without continually rebuilding.
 
 #### `npm publish`
-Published the library in the `dist` folder to npm.\
-Publishes a package to the registry so that it can be installed by name.\
-The `npm prepublishOnly` script ensures that the package is always built 
-before it is published.
-
-#### `npm pack`
-Packages the library in the `dist` folder to a tarball.\
-Indicates that you don't want npm to make any changes and that it 
-should only report what it would have done.
+Published the library in the `dist` folder to npm.<br/>
+Publishes a package to the registry so that it can be installed by name.<br/>
+The `npm prepublishOnly` script ensures that it is built 
+before publishing.
 
 ## License
-This project is licensed under the terms of the _MIT license_.
+This project is licensed under the terms of the _MIT licence_.
 
 ## Attributions
 My thanks go to Natwar Singh for the inspiration for the Breakpoints component:
-- Solution by Natwar Singh in reply to the following question on Stack Overflow:\
-  "Display Bootstrap breakpoint name when resizing the screen"\
-  https://stackoverflow.com/questions/65319012/display-bootstrap-breakpoint-name-when-resizing-the-screen\
+- Solution by Natwar Singh in reply to the following question on Stack Overflow:<br/>
+  "Display Bootstrap breakpoint name when resizing the screen"<br/>
+  https://stackoverflow.com/questions/65319012/display-bootstrap-breakpoint-name-when-resizing-the-screen<br/>
   https://stackoverflow.com/users/1579939/natwar-singh
 
 ## Author
 **Leoni Lubbinge**
-- [![Website Badge](https://img.shields.io/badge/https%3A%2F%2Ftahoni.info-blue?color=%230077b6ff)](https://www.tahoni.info)
-- [![Email Badge](https://img.shields.io/badge/leonil%40tahoni.info-blue?color=%230077b6ff)](mailto:leonil@tahoni.info)
-- [![Outlook Email Badge](https://img.shields.io/badge/tahoni%40outlook.com-blue?color=%230077b6ff)](mailto:tahoni@outlook.com)
-- [![Gmail Email Badge](https://img.shields.io/badge/tahoni%40gmail.com-blue?logo=gmail&labelColor=%23023e8aff&color=%230077b6ff)](mailto:tahoni@gmail.com)
-- [![GitHub Badge](https://img.shields.io/badge/Leoni_Lubbinge-blue?logo=github&labelColor=%23023e8aff&color=%230077b6ff)](https://github.com/tahoni)
-- [![LinkedIn Badge](https://img.shields.io/badge/Leoni_Lubbinge-blue?logo=linkedin&labelColor=%23023e8aff&color=%230077b6ff)](https://www.linkedin.com/in/leoni-lubbinge-06066b16/)
 
-## Support
-Contributions, suggestions, bug reports and feature requests are welcome!
+- [![Website Badge](https://custom-icon-badges.demolab.com/badge/https%3A%2F%2Ftahoni.info-blue?logo=file-code)](https://www.tahoni.info)
+- [![Email Badge](https://custom-icon-badges.demolab.com/badge/leonil%40tahoni.info-blue?logo=mail)](mailto:leonil@tahoni.info)
 
-Give a ⭐️ if you like this project!
+
+- [![Outlook Email Badge](https://custom-icon-badges.demolab.com/badge/tahoni%40outlook.com-blue.svg?logo=mail)](mailto:tahoni@outlook.com)
+- [![Gmail Email Badge](https://img.shields.io/badge/tahoni%40gmail.com-blue?logo=gmail)](mailto:tahoni@gmail.com)
+- [![GitHub Badge](https://img.shields.io/badge/Leoni_Lubbinge-blue?logo=github)](https://github.com/tahoni)
+- [![LinkedIn Badge](https://custom-icon-badges.demolab.com/badge/Leoni_Lubbinge-blue.svg?logoSource=feather&logo=linkedin)](https://www.linkedin.com/in/leoni-lubbinge-06066b16/)
+- 
