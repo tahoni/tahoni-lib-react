@@ -28,7 +28,7 @@ export default defineConfig({
       formats: ["es"],
     },
     rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
+      // make sure to externalise deps that shouldn't be bundled
       // into your library
       external: [
         "react",

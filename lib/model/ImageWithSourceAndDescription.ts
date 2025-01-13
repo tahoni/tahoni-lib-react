@@ -6,7 +6,7 @@ export class ImageWithSourceAndDescription extends ObjectWithNameAndDescription 
   text?: string;
 
   constructor(right: {
-    name: string;
+    name?: string;
     description: string;
     image: string;
     text?: string;

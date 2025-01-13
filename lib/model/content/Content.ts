@@ -8,7 +8,7 @@ import {
   SUMMARY_DEFAULT_LENGTH,
 } from "../../constants/ContentConstants.ts";
 
-export class WebContent extends ObjectWithNameAndDescription {
+export class Content extends ObjectWithNameAndDescription {
   content: string;
   summary?: string;
   children?: ReactNode[];
@@ -35,13 +35,13 @@ export class WebContent extends ObjectWithNameAndDescription {
     dateUpdated?: Date;
   }) {
     super({
-      name: WebContent.generateName(right.content, right.name),
+      name: Content.generateName(right.content, right.name),
       subject: right.subject,
       description: right.description,
     });
 
     this.content = right.content;
-    this.summary = WebContent.generateSummary(right.content, right.summary);
+    this.summary = Content.generateSummary(right.content, right.summary);
     this.children = right.children;
 
     this.topic = right.topic;

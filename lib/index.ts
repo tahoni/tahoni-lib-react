@@ -1,16 +1,13 @@
-export { Breakpoints } from "./layout/Breakpoints/Breakproints.tsx";
-export { MaskOverlay } from "./components/MaskOverlay/MaskOverlay.tsx";
-export { Loader } from "./components/Loader/Loader.tsx";
-export { Cover } from "./components/Cover/Cover.tsx";
-export { CoverSlider } from "./components/CoverSlider/CoverSlider.tsx";
+export { Breakpoints } from "./layout";
+export { Cover, CoverSlider, Loader, MaskOverlay } from "./components";
 
-export { ObjectWithNameAndDescription } from "./models/ObjectWithNameAndDescription.ts";
-export { ImageWithSourceAndDescription } from "./models/ImageWithSourceAndDescription.ts";
+export { ObjectWithNameAndDescription } from "./model/ObjectWithNameAndDescription.ts";
+export { ImageWithSourceAndDescription } from "./model/ImageWithSourceAndDescription.ts";
 
-export { Topic } from "./models/topic/Topic.ts";
-export { Category } from "./models/topic/Category.ts";
-export { Tag } from "./models/topic/Tag.ts";
+export { Content } from "./model/content/Content.ts";
+export { Post } from "./model/content/Post.ts";
+export { Event } from "./model/content/Event.ts";
 
-export { WebContent } from "./models/content/WebContent.ts";
-export { Post } from "./models/content/Post.ts";
-export { Event } from "./models/content/Event.ts";
+export { Topic } from "./model/topic/Topic.ts";
+export { Category } from "./model/topic/Category.ts";
+export { Tag } from "./model/topic/Tag.ts";

@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
-import { WebContent } from "./WebContent.ts";
+import { Content } from "./Content.ts";
 import { Topic } from "../topic/Topic.ts";
 import { Category } from "../topic/Category.ts";
 import { Tag } from "../topic/Tag.ts";
 
-export class Event extends WebContent {
+export class Event extends Content {
   startTime: Date;
   endTime?: Date;
 

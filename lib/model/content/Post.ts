@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
-import { WebContent } from "./WebContent.ts";
+import { Content } from "./Content.ts";
 import { Topic } from "../topic/Topic.ts";
 import { Category } from "../topic/Category.ts";
 import { Tag } from "../topic/Tag.ts";
 
-export class Post extends WebContent {
+export class Post extends Content {
   constructor(right: {
     name?: string;
     subject: string;
