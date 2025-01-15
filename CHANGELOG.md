@@ -2,10 +2,10 @@
 ## Change Log
 
 ### Table of Contents
-- [Version 3.1.0](#version-310---_2025-01-14_)
+- [Version 3.2.0](#version-320---_2025-01-15_)
 
 
-### [Version 3.1.0](https://github.com/tahoni/template-react/releases/tag/version-3.1.0) - _2025-01-14_
+### [Version 3.2.0](https://github.com/tahoni/template-react/releases/tag/version-3.2.0) - _2025-01-15_
 Improved the model classes.<br/>
 
 #### Enhancements and Updates
