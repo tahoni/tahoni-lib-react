@@ -1,5 +1,5 @@
 {
-  "name": "tahoni-lib-react",
+  "name": "@tahoni/tahoni-lib-react",
   "author": "Leoni Lubbinge <tahoni@gmail.com>",
   "description": "React component library",
   "version": "3.2.0",
