@@ -1,11 +1,12 @@
 # Leoni Lubbinge's React library
 ## Release Notes
 
-### [Version 3.2.2](https://github.com/tahoni/template-react/releases/tag/version-3.2.2) - _2025-02-07_
-Mitigated a critical vitest vulnerability.
+### [Version 3.2.1](https://github.com/tahoni/template-react/releases/tag/version-3.2.1) - _2025-01-15_
+Fixed packaging and publishing to my GitHub npm registry.<br/>
 
-#### Dependencies
-- Updated the `vitest` dependency.
+#### General Technical Changes
+- Renamed the npm token in the `.npmrc` file for future use in GitHub actions.
+- Added my GitHub namespace to `package.json` in the description field.
 
 #### Changes by
 @tahoni
