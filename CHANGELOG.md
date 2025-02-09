@@ -2,8 +2,18 @@
 ## Change Log
 
 ### Table of Contents
-- [Version 3.2.0](#version-320---_2025-01-14_)
+- [Version 3.2.2](#version-322---_2025-02-07_)
 - [Version 3.2.1](#version-321---_2025-01-15_)
+- [Version 3.2.0](#version-320---_2025-01-14_)
+
+### [Version 3.2.2](https://github.com/tahoni/template-react/releases/tag/version-3.2.1) - _2025-02-07_
+Mitigated a critical severity security vulnerability.<br/>
+
+#### Dependencies
+- Updated the `vitest` dependency to version 3 to mitigate a critical security vulnerability.
+
+#### Changes by
+@tahoni
 
 ### [Version 3.2.1](https://github.com/tahoni/template-react/releases/tag/version-3.2.1) - _2025-01-15_
 Fixed packaging and publishing to my GitHub npm registry.<br/>
