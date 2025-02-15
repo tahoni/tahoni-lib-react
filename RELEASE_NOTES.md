@@ -1,12 +1,12 @@
 # Leoni Lubbinge's React library
 ## Release Notes
 
-### [Version 3.2.1](https://github.com/tahoni/template-react/releases/tag/version-3.2.1) - _2025-01-15_
-Fixed packaging and publishing to my GitHub npm registry.<br/>
+### [Version 3.2.3](https://github.com/tahoni/template-react/releases/tag/version-3.2.2) - _2025-02-15_
+Mitigated a moderate severity security vulnerability.<br/>
 
-#### General Technical Changes
-- Renamed the npm token in the `.npmrc` file for future use in GitHub actions.
-- Added my GitHub namespace to `package.json` in the description field.
+#### Dependencies
+- Updated the `esbuild` dependency to mitigate a moderate security vulnerability.
 
 #### Changes by
+@dependabot
 @tahoni
