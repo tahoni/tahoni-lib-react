@@ -1,15 +1,13 @@
 # Leoni Lubbinge's React library
 ## Release Notes
 
-### [Version 3.2.3](https://github.com/tahoni/template-react/releases/tag/version-3.2.2) - _2025-02-15_
-Mitigated a moderate severity security vulnerability.<br/>
+### [Version 3.2.4](https://github.com/tahoni/template-react/releases/tag/version-3.2.4) - _2025-02-23_
+Fixed the colour and z-index of the loader.<br/>
 
-#### General Technical Changes
-- A setting was removed from `vite.config.ts` to roll back the changes to build the project with smaller chunks.
-
-#### Dependencies
-- Updated the `esbuild` dependency to mitigate a moderate security vulnerability.
+#### Enhancements and Updates
+- Styled the loader with a module CSS, not a global one.
+- The loader colour is now picked up correctly from the CSS variable.
+- The loader z-index is now also picked up from the CSS.
 
 #### Changes by
-@dependabot
 @tahoni

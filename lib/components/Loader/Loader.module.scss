@@ -1,3 +1,11 @@
+$loader-z-index: 999999;
+$loader-color: var(--tl-loader-color, white);
+
 :export {
-    loaderColor: var(--tl-loader-color, white);
+    loaderColor: $loader-color;
+    loaderZIndex: $loader-z-index;
+}
+
+.Loader, .Loader span {
+  z-index: $loader-z-index;
 }
