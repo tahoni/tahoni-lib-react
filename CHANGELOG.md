@@ -2,12 +2,24 @@
 ## Change Log
 
 ### Table of Contents
+- [Version 3.2.4](#version-324---_2025-02-23_)
 - [Version 3.2.3](#version-323---_2025-02-15_)
 - [Version 3.2.2](#version-322---_2025-02-07_)
 - [Version 3.2.1](#version-321---_2025-01-15_)
 - [Version 3.2.0](#version-320---_2025-01-14_)
 
-### [Version 3.2.3](https://github.com/tahoni/template-react/releases/tag/version-3.2.2) - _2025-02-15_
+### [Version 3.2.4](https://github.com/tahoni/template-react/releases/tag/version-3.2.4) - _2025-02-23_
+Fixed the colour and z-index of the loader.<br/>
+
+#### Enhancements and Updates
+- Styled the loader with a module CSS, not a global one.
+- The loader colour is now picked up correctly from the CSS variable.
+- The loader z-index is now also picked up from the CSS.
+
+#### Changes by
+@tahoni
+
+### [Version 3.2.3](https://github.com/tahoni/template-react/releases/tag/version-3.2.3) - _2025-02-15_
 Mitigated a moderate severity security vulnerability.<br/>
 
 #### General Technical Changes
