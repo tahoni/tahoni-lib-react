@@ -14,7 +14,6 @@ export default defineConfig({
     libInjectCss(),
   ],
   build: {
-    target: "ES2023",
     minify: true,
     sourcemap: false,
     copyPublicDir: false,
@@ -27,7 +26,6 @@ export default defineConfig({
       formats: ["es"],
     },
     rollupOptions: {
-      treeshake: true,
       // make sure to externalise deps that shouldn't be bundled
       // into your library
       external: [
