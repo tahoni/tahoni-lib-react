@@ -1,9 +1,12 @@
-# Leoni Lubbinge's React library
+# HPSC website
 
-## Release Notes
+## Change Log
 
-### Version 3.3.0 - _2026-01-20_
+### Table of Contents
+- [Version 0.0.0](#version-000---_20xx-xx-xx_)
 
+
+### [Version 0.0.0](https://github.com/tahoni/template-react/releases/tag/version-0.0.0) - _20xx-xx-xx_
 A summary of the main changes.
 
 #### Enhancements and Updates
@@ -19,5 +22,4 @@ A summary of the main changes.
 #### Dependencies
 
 #### Changes by
-
 @tahoni

@@ -1,9 +1,8 @@
-# Leoni Lubbinge's React library
+# HPSC website
 
 ## Release Notes
 
-### Version 3.3.0 - _2026-01-20_
-
+### Version 0.0.0 - _20xx-xx-xx_
 A summary of the main changes.
 
 #### Enhancements and Updates
@@ -19,5 +18,4 @@ A summary of the main changes.
 #### Dependencies
 
 #### Changes by
-
 @tahoni

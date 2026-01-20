@@ -1,7 +1,7 @@
 {
   "name": "@tahoni/tahoni-lib-react",
   "author": "Leoni Lubbinge <tahoni@gmail.com>",
-  "description": "Tahoni's React Component Library",
+  "description": "Leoni Lubbinge's React Library",
   "version": "3.3.0",
   "type": "module",
   "scripts": {
