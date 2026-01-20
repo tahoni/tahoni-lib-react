@@ -1,5 +1,5 @@
 export { Breakpoints } from "./layout";
-export { Cover, CoverSlider, Loader, MaskOverlay } from "./components";
+export { Loader, MaskOverlay } from "./components";
 
 export { ObjectWithNameAndDescription } from "./model/ObjectWithNameAndDescription.ts";
 export { ImageWithSourceAndDescription } from "./model/ImageWithSourceAndDescription.ts";
