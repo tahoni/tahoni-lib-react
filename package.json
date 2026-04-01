@@ -2,7 +2,8 @@
   "name": "@tahoni/tahoni-lib-react",
   "author": "Leoni Lubbinge <tahoni@gmail.com>",
   "description": "Leoni Lubbinge's React Library",
-  "version": "3.3.0",
+  "version": "3.3.1",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
