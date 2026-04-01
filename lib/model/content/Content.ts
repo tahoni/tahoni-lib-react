@@ -3,10 +3,7 @@ import { ObjectWithNameAndDescription } from "../ObjectWithNameAndDescription.ts
 import { Topic } from "../topic/Topic.ts";
 import { Category } from "../topic/Category.ts";
 import { Tag } from "../topic/Tag.ts";
-import {
-  NAME_DEFAULT_LENGTH,
-  SUMMARY_DEFAULT_LENGTH,
-} from "../../constants/ContentConstants.ts";
+import { NAME_DEFAULT_LENGTH, SUMMARY_DEFAULT_LENGTH } from "../../constants/ContentConstants.ts";
 
 export class Content extends ObjectWithNameAndDescription {
   content: string;
@@ -53,7 +50,7 @@ export class Content extends ObjectWithNameAndDescription {
   }
 
   public static generateName = (content: string, name?: string): string => {
-    let result: string = "";
+    let result: string;
     if (!name) {
       result = content.substring(
         0,

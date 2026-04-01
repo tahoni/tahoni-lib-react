@@ -24,7 +24,7 @@ export class ImageWithSourceAndDescription extends ObjectWithNameAndDescription 
   }
 
   public static generateName = (description: string, name?: string) => {
-    let result: string = "";
+    let result: string;
     if (!name) {
       result = description.substring(
         0,

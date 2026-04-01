@@ -20,7 +20,7 @@ export class ObjectWithNameAndDescription {
     description?: string,
     subject?: string,
   ): string {
-    let result: string = "";
+    let result: string;
     if (subject) {
       result = subject;
     } else if (description) {
