@@ -40,7 +40,7 @@
     "vite": "^6.4.2",
     "vite-plugin-dts": "^4.5.0",
     "vite-plugin-lib-inject-css": "^2.2.1",
-    "vitest": "^3.0.5"
+    "vitest": "^4.1.0"
   },
   "peerDependencies": {
     "bootstrap": "^5.3.3",
