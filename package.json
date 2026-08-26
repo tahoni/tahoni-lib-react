@@ -43,10 +43,10 @@
     "vitest": "^4.1.11"
   },
   "peerDependencies": {
-    "bootstrap": "^5.3.3",
-    "eslint-plugin-react": "^7.37.4",
-    "glob": "^11.0.1",
-    "react-bootstrap": "^2.10.9",
-    "react-spinners": "^0.15.0"
+    "bootstrap": "^5.3.8",
+    "eslint-plugin-react": "^7.37.5",
+    "glob": "^13.0.6",
+    "react-bootstrap": "^2.10.10",
+    "react-spinners": "^0.17.0"
   }
 }
