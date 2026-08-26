@@ -4,6 +4,7 @@
 
 ### Table of Contents
 
+- [Version 3.3.3](#version-333---_2026-08-26_)
 - [Version 3.3.2](#version-332---_2026-08-26_)
 - [Version 3.3.1](#version-331---_2026-04-01_)
 - [Version 3.3.0](#version-330---_2026-01-20_)
@@ -12,6 +13,56 @@
 - [Version 3.2.2](#version-322---_2025-02-07_)
 - [Version 3.2.1](#version-321---_2025-01-15_)
 - [Version 3.2.0](#version-320---_2025-01-14_)
+
+### [Version 3.3.3](https://github.com/tahoni/template-react/releases/tag/version-3.3.3) - _2026-08-26_
+
+Patch release that relaxes a dependency version constraint. This release is backwards-compatible
+with 3.3.2 and contains no component or runtime behaviour changes.
+
+#### Highlights
+
+- Dependency ranges: Widened the `react` and `react-dom` dependency ranges from `~19.2.0`
+  (patch-only) to `^19.2.0` (minor and patch), so consumers can pick up future 19.x minor
+  releases of React without waiting for a new version of this package.
+
+#### Notable fixes
+
+- None. This release only changes dependency version ranges — see "Highlights" above for the
+  full scope of changes.
+
+#### Security
+
+- No security-related changes in this release.
+
+#### Compatibility & Migration
+
+- No breaking changes for consumers of the published package. Consumers can upgrade from `3.3.2`
+  to `3.3.3` without code changes.
+- The widened `react`/`react-dom` ranges mean consumers relying on npm's default resolution may
+  now receive newer 19.x minor releases of React automatically. Pin to `~19.2.0` in your own
+  project if you need to defer those updates.
+
+#### How to upgrade
+
+Using npm:
+
+```
+npm install tahoni-lib-react@3.3.3
+```
+
+Using yarn:
+
+```
+yarn add tahoni-lib-react@3.3.3
+```
+
+#### Full changelog
+
+See `CHANGELOG.md` for a complete list of commits and PRs included in this release.
+
+#### Changes by
+
+@tahoni
 
 ### [Version 3.3.2](https://github.com/tahoni/template-react/releases/tag/version-3.3.2) - _2026-08-26_
 
