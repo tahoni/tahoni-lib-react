@@ -2,7 +2,7 @@
   "name": "@tahoni/tahoni-lib-react",
   "author": "Leoni Lubbinge <tahoni@gmail.com>",
   "description": "Leoni Lubbinge's React Library",
-  "version": "3.3.2",
+  "version": "3.3.3",
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -21,8 +21,8 @@
   ],
   "dependencies": {
     "@types/node": "^24.13.3",
-    "react": "~19.2.0",
-    "react-dom": "~19.2.0"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",
