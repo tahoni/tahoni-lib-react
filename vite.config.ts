@@ -4,7 +4,7 @@ import dts from "vite-plugin-dts";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
 import { resolve } from "node:path";
 
-import { peerDependencies } from "./package.json";
+import { peerDependencies } from "./package.json" with { type: "json" };
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,7 +19,7 @@ export default defineConfig({
     copyPublicDir: false,
     lib: {
       // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, "lib/index.ts"),
+      entry: resolve(import.meta.dirname, "lib/index.ts"),
       name: "TahoniLib",
       // the proper extensions will be added
       fileName: "tahoni-lib",

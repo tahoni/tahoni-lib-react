@@ -2,55 +2,65 @@
 
 ## Release Notes
 
-### Version 3.3.1 - _2026-04-01_
+### Version 3.3.2 - _2026-08-26_
 
-Patch release containing small fixes, dependency updates, and documentation improvements. This
-release is backwards-compatible with 3.3.0 and focuses on stabilising the build and updating
-developer tooling.
+Patch release focused entirely on refreshing the toolchain. This release is backwards-compatible
+with 3.3.1 and contains no component or runtime behaviour changes — every change is a dependency
+version bump plus the small build-config tweaks needed to keep them working together.
 
 #### Highlights
 
-- Notable fixes: Resolved a number of minor runtime and styling issues affecting the
-  `Loader` and `MaskOverlay` components (see "Notable fixes" below for details).
-- Build & packaging: Improved bundling configuration and TypeScript declaration exports to
-  prevent mis-exported types at runtime and reduce the published package surface.
-- Dependencies: Upgraded development dependencies to address security advisories and improve
-  tooling (linting, type-checking and build tools).
-- Documentation: Clarified examples in the `README.md` and improved release templates and
-  contributor guidance.
+- Core tooling: Upgraded Vite from 6.4.2 to 8.2.2 and `@vitejs/plugin-react` from 4.3.4 to 6.1.0
+  to track the latest stable build tooling.
+- Runtime dependencies: Bumped React and React DOM from 19.0.0 to 19.2.0, along with their
+  matching `@types/react` and `@types/react-dom` type packages.
+- Linting & type-checking: Upgraded the ESLint and TypeScript toolchain (`eslint`,
+  `typescript-eslint`, `eslint-plugin-react-hooks`, `eslint-plugin-react-refresh`,
+  `eslint-plugin-tsdoc`, `globals`) and TypeScript itself (5.6.2 to 6.0.3) to their latest
+  mutually-compatible versions.
+- Build plugins: Upgraded `vite-plugin-dts` (4.5.0 to 5.0.3), `vite-plugin-lib-inject-css`
+  (2.2.1 to 2.2.2), and `sass` (1.85.0 to 1.103.1).
+- Peer dependencies: Refreshed the declared peer ranges for `bootstrap`, `eslint-plugin-react`,
+  `glob`, `react-bootstrap`, and `react-spinners` to their latest stable versions.
+- Node typings: Updated `@types/node` from 22.13.4 to 24.13.3 to align with the Node 24 LTS line
+  used for local development and CI.
 
 #### Notable fixes
 
-- Loader: fixed spinner alignment and animation jitter across several browsers and ensured
-  the component respects high-contrast and reduced-motion settings when available.
-- MaskOverlay: addressed a z-index/click-through issue which could allow underlying content
-  to be interactable; improved ARIA handling for better accessibility.
-- Types & exports: corrected type declaration exports so consumers no longer encounter
-  runtime import/type mismatches when using the package with TypeScript projects.
+- None. This release does not modify any component source, styling, or exported types — see
+  "Highlights" above for the full scope of changes.
 
 #### Security
 
-- Several development-time packages were bumped to resolve security advisories. These were
-  limited to devDependencies and do not introduce runtime changes to production consumers.
+- `vite`, `eslint`, `typescript`, and their supporting plugins were upgraded to their latest
+  stable releases, resolving all outstanding `npm audit` advisories carried over from 3.3.1's
+  dependency set. All changes are limited to devDependencies and peerDependencies and do not
+  introduce runtime changes to production consumers.
 
 #### Compatibility & Migration
 
-- No breaking changes in this release. Consumers can upgrade from `3.3.0` to `3.3.1` without
-  code changes. If you encounter issues related to type exports, please report them via the
-  repository issues so we can follow up quickly.
+- No breaking changes for consumers of the published package. Consumers can upgrade from `3.3.1`
+  to `3.3.2` without code changes.
+- Two devDependencies were deliberately held back from their absolute-latest release to preserve
+  toolchain compatibility: `eslint` stays on the 9.x line (`eslint-plugin-react`'s peer range
+  does not yet support ESLint 10) and `typescript` stays on 6.0.x (`typescript-eslint`'s peer
+  range does not yet support TypeScript 7).
+- The `glob` peer dependency range moved from `^11.0.1` to `^13.0.6`, a major version jump.
+  Consumers who install `glob` directly alongside this package should confirm their own version
+  satisfies the new range.
 
 #### How to upgrade
 
 Using npm:
 
 ```
-npm install tahoni-lib-react@3.3.1
+npm install tahoni-lib-react@3.3.2
 ```
 
 Using yarn:
 
 ```
-yarn add tahoni-lib-react@3.3.1
+yarn add tahoni-lib-react@3.3.2
 ```
 
 #### Full changelog
