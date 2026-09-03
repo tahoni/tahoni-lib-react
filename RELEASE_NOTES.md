@@ -2,7 +2,7 @@
 
 ## Release Notes
 
-### Version 3.3.4 - _2026-09-03_
+### Version 3.4.0 - _2026-09-03_
 
 Feature release that adds two new components, `Cover` and `CoverSlider`, for building hero-style
 image covers with optional text overlays and carousels. This release is backwards-compatible
@@ -31,7 +31,7 @@ with 3.3.3.
 #### Compatibility & Migration
 
 - No breaking changes for consumers of the published package. Consumers can upgrade from `3.3.3`
-  to `3.3.4` without code changes.
+  to `3.4.0` without code changes.
 - Consumers who want to use `CoverSlider` must have `react-slick`'s stylesheets available (as
   with any other `react-slick` consumer); `Cover` and `CoverSlider` both require the existing
   `react-bootstrap`/`bootstrap` peer dependencies to already be installed.
@@ -41,13 +41,13 @@ with 3.3.3.
 Using npm:
 
 ```
-npm install tahoni-lib-react@3.3.4
+npm install tahoni-lib-react@3.4.0
 ```
 
 Using yarn:
 
 ```
-yarn add tahoni-lib-react@3.3.4
+yarn add tahoni-lib-react@3.4.0
 ```
 
 #### Full changelog
