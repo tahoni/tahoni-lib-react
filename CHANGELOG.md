@@ -247,7 +247,7 @@ version bump plus the small build-config tweaks needed to keep them working toge
 - Linting & type-checking: Upgraded the ESLint and TypeScript toolchain (`eslint`,
   `typescript-eslint`, `eslint-plugin-react-hooks`, `eslint-plugin-react-refresh`,
   `eslint-plugin-tsdoc`, `globals`) and TypeScript itself (5.6.2 to 6.0.3) to their latest
-  mutually-compatible versions.
+  mutually compatible versions.
 - Build plugins: Upgraded `vite-plugin-dts` (4.5.0 to 5.0.3), `vite-plugin-lib-inject-css`
   (2.2.1 to 2.2.2), and `sass` (1.85.0 to 1.103.1).
 - Peer dependencies: Refreshed the declared peer ranges for `bootstrap`, `eslint-plugin-react`,
@@ -443,7 +443,7 @@ Fixed packaging and publishing to my GitHub npm registry.<br/>
 
 #### General Technical Changes
 
-- Renamed the npm token in the `.npmrc` file for future use in GitHub actions.
+- Renamed the npm token in the `.npmrc` file for future use in GitHub Actions.
 - Added my GitHub namespace to `package.json` in the description field.
 
 #### Changes by
@@ -469,7 +469,7 @@ Improved the model classes.<br/>
 
 #### General Technical Changes
 
-- Added a CodeQL Github workflow.
+- Added a CodeQL GitHub workflow.
 - Standardised the `vite.config.ts` file.
 
 #### Dependencies
