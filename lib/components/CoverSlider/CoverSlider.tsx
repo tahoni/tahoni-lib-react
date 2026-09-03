@@ -1,8 +1,16 @@
 import { ReactElement } from "react";
-import Slider, { Settings } from "react-slick";
+import ReactSlick, { Settings } from "react-slick";
 import { ImageWithSourceAndDescription } from "../../model/ImageWithSourceAndDescription.ts";
 import { Cover, CoverProps, CoverSlideObject } from "../Cover/Cover.tsx";
 import "./CoverSlider.scss";
+
+// Some bundlers' CommonJS interop leaves react-slick's default export
+// wrapped as { default: Slider } instead of unwrapping it, so resolve
+// whichever shape we actually got at runtime.
+const Slider: typeof ReactSlick =
+  typeof ReactSlick === "function"
+    ? ReactSlick
+    : (ReactSlick as unknown as { default: typeof ReactSlick }).default;
 
 export const CoverSlider = (props: CoverSliderProps): ReactElement => {
   // Build the slides
