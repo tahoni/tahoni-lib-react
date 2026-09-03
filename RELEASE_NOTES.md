@@ -2,22 +2,29 @@
 
 ## Release Notes
 
-### Version 3.4.1 - _2026-09-03_
+### Version 3.4.2 - _2026-09-03_
 
-Patch release that adds a missing dependency needed by the `CoverSlider` example styling. This
-release is backwards-compatible with 3.4.0 and contains no component or runtime behaviour
-changes.
+Patch release that fixes two `CoverSlider` bugs — a ref-during-render issue and a rendering
+failure under Vite's dependency pre-bundler — and moves its slick stylesheet imports into the
+component itself. This release is backwards-compatible with 3.4.1.
 
 #### Highlights
 
-- Dependencies: Added `slick-carousel` as a dependency, providing the base and theme
-  stylesheets (`slick-carousel/slick/slick` and `slick-carousel/slick/slick-theme`) that the
-  `CoverSlider` component's styling is built on.
+- Styling: Moved the `slick-carousel` base and theme stylesheet imports from the example app
+  into `CoverSlider`'s own stylesheet, so consumers of the component get correct slick styling
+  automatically without needing to import `slick-carousel` themselves.
+- CoverSlider: The component now resolves its `react-slick` import defensively at runtime,
+  independent of how a given bundler's CommonJS interop happens to shape the default export.
 
 #### Notable fixes
 
-- Fixed a missing dependency that could cause Sass compilation to fail when resolving the
-  `slick-carousel` stylesheet imports used alongside `CoverSlider`.
+- CoverSlider: Fixed a bug where the component's slide list was held in a `useRef` and read
+  during render, which could cause `CoverSlider` not to update as expected and violated the
+  Rules of React. The slide list is now derived directly from props on each render instead.
+- CoverSlider: Fixed a bug where `react-slick`'s default export could be left wrapped as
+  `{ default: Slider }` instead of unwrapped to the `Slider` component itself, depending on the
+  bundler's CommonJS interop behaviour (observed with Vite 8's dependency pre-bundler). This
+  caused React to throw "Element type is invalid" and `CoverSlider` to fail to render at all.
 
 #### Security
 
@@ -25,24 +32,24 @@ changes.
 
 #### Compatibility & Migration
 
-- No breaking changes for consumers of the published package. Consumers can upgrade from `3.4.0`
-  to `3.4.1` without code changes.
-- `slick-carousel` declares a peer dependency on `jquery`; only its stylesheets are used by this
-  package, so consumers who do not otherwise use `slick-carousel`'s JavaScript do not need to
-  install `jquery`.
+- No breaking changes for consumers of the published package. Consumers can upgrade from `3.4.1`
+  to `3.4.2` without code changes.
+- Consumers who were manually importing `slick-carousel/slick/slick` and
+  `slick-carousel/slick/slick-theme` themselves to style `CoverSlider` can remove those imports,
+  as `CoverSlider` now includes them automatically.
 
 #### How to upgrade
 
 Using npm:
 
 ```
-npm install tahoni-lib-react@3.4.1
+npm install tahoni-lib-react@3.4.2
 ```
 
 Using yarn:
 
 ```
-yarn add tahoni-lib-react@3.4.1
+yarn add tahoni-lib-react@3.4.2
 ```
 
 #### Full changelog
