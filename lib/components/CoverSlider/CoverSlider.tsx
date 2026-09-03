@@ -1,28 +1,26 @@
-import { ReactElement, RefObject, useRef } from "react";
-import Slider, { Settings } from "react-slick";
+import { ReactElement } from "react";
+import ReactSlick, { Settings } from "react-slick";
 import { ImageWithSourceAndDescription } from "../../model/ImageWithSourceAndDescription.ts";
 import { Cover, CoverProps, CoverSlideObject } from "../Cover/Cover.tsx";
 import "./CoverSlider.scss";
 
-export const CoverSlider = (props: CoverSliderProps): ReactElement => {
-  // Initialize all the slides
-  const initialCoverSlides: Map<number, CoverProps> = new Map();
-  let index: number = 0;
-  for (let slide of props.slides) {
-    const coverSlideObject: CoverProps = {
-      slide: new CoverSlideObject(
-        slide.image,
-        slide.description ?? "",
-        slide.text ?? "",
-      ),
-    };
-    initialCoverSlides.set(index, coverSlideObject);
-    ++index;
-  }
+// Some bundlers' CommonJS interop leaves react-slick's default export
+// wrapped as { default: Slider } instead of unwrapping it, so resolve
+// whichever shape we actually got at runtime.
+const Slider: typeof ReactSlick =
+  typeof ReactSlick === "function"
+    ? ReactSlick
+    : (ReactSlick as unknown as { default: typeof ReactSlick }).default;
 
-  // Slides properties
-  const coverSlides: RefObject<Map<number, CoverProps>> =
-    useRef(initialCoverSlides);
+export const CoverSlider = (props: CoverSliderProps): ReactElement => {
+  // Build the slides
+  const coverSlides: CoverProps[] = props.slides.map((slide) => ({
+    slide: new CoverSlideObject(
+      slide.image,
+      slide.description ?? "",
+      slide.text ?? "",
+    ),
+  }));
 
   // Slider settings
   const settings: Settings = {
@@ -41,20 +39,11 @@ export const CoverSlider = (props: CoverSliderProps): ReactElement => {
 
   return (
     <div className="slider-container">
-      {coverSlides.current && coverSlides.current.size > 0 ? (
+      {coverSlides.length > 0 ? (
         <Slider {...settings}>
-          {coverSlides.current.keys()
-            ? Array.from(coverSlides.current.keys()).map((key: number) => {
-                const coverSlide: CoverProps | undefined =
-                  coverSlides.current.get(key);
-
-                if (coverSlide) {
-                  return <Cover slide={coverSlide?.slide} key={key} />;
-                } else {
-                  return "";
-                }
-              })
-            : ""}
+          {coverSlides.map((coverSlide, index) => (
+            <Cover slide={coverSlide.slide} key={index} />
+          ))}
         </Slider>
       ) : (
         ""
