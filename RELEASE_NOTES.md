@@ -2,27 +2,22 @@
 
 ## Release Notes
 
-### Version 3.4.0 - _2026-09-03_
+### Version 3.4.1 - _2026-09-03_
 
-Feature release that adds two new components, `Cover` and `CoverSlider`, for building hero-style
-image covers with optional text overlays and carousels. This release is backwards-compatible
-with 3.3.3.
+Patch release that adds a missing dependency needed by the `CoverSlider` example styling. This
+release is backwards-compatible with 3.4.0 and contains no component or runtime behaviour
+changes.
 
 #### Highlights
 
-- New component `Cover`: Renders a full-width image with an optional gradient overlay and
-  centred heading text, driven by a new `CoverSlideObject` model.
-- New component `CoverSlider`: Wraps one or more `Cover` slides in a carousel, built on top of
-  `react-slick`, with configurable autoplay and infinite-loop behaviour.
-- Dependencies: Added `react-slick` and its `@types/react-slick` type definitions as
-  dependencies to power the new `CoverSlider` component. Both new components continue to rely on
-  the existing `react-bootstrap`/`bootstrap` peer dependencies — no new peer dependencies were
-  introduced.
+- Dependencies: Added `slick-carousel` as a dependency, providing the base and theme
+  stylesheets (`slick-carousel/slick/slick` and `slick-carousel/slick/slick-theme`) that the
+  `CoverSlider` component's styling is built on.
 
 #### Notable fixes
 
-- None. This release only adds new components — see "Highlights" above for the full scope of
-  changes.
+- Fixed a missing dependency that could cause Sass compilation to fail when resolving the
+  `slick-carousel` stylesheet imports used alongside `CoverSlider`.
 
 #### Security
 
@@ -30,24 +25,24 @@ with 3.3.3.
 
 #### Compatibility & Migration
 
-- No breaking changes for consumers of the published package. Consumers can upgrade from `3.3.3`
-  to `3.4.0` without code changes.
-- Consumers who want to use `CoverSlider` must have `react-slick`'s stylesheets available (as
-  with any other `react-slick` consumer); `Cover` and `CoverSlider` both require the existing
-  `react-bootstrap`/`bootstrap` peer dependencies to already be installed.
+- No breaking changes for consumers of the published package. Consumers can upgrade from `3.4.0`
+  to `3.4.1` without code changes.
+- `slick-carousel` declares a peer dependency on `jquery`; only its stylesheets are used by this
+  package, so consumers who do not otherwise use `slick-carousel`'s JavaScript do not need to
+  install `jquery`.
 
 #### How to upgrade
 
 Using npm:
 
 ```
-npm install tahoni-lib-react@3.4.0
+npm install tahoni-lib-react@3.4.1
 ```
 
 Using yarn:
 
 ```
-yarn add tahoni-lib-react@3.4.0
+yarn add tahoni-lib-react@3.4.1
 ```
 
 #### Full changelog
